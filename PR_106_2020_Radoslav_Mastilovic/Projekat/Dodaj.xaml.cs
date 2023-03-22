@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,307 @@ namespace Projekat
 	/// </summary>
 	public partial class Dodaj : Window
 	{
+		private string pomocna = "";
 		public Dodaj()
 		{
 			InitializeComponent();
+			textBoxNaziv.Text = "Unesite naziv igrača";
+			textBoxNaziv.Foreground = Brushes.Thistle;
+
+			textBoxBroj.Text = "Unesite broj dresa";
+			textBoxBroj.Foreground = Brushes.Thistle;
+
+
+
+			ComboBoxFamily.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+			ComboBoxSize.ItemsSource = new List<double> { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 };
+			ComboBoxFamily.SelectedIndex = 2;
+			ComboBoxColor.ItemsSource = new List<string>() { "Black", "White", "Yellow", "Red", "Purple", "Orange", "Green", "Brown", "Blue" };
+			ComboBoxColor.SelectedIndex = 0;
+		}
+
+
+		private void buttonIzađi_Click(object sender, RoutedEventArgs e)
+		{
+			this.Close();
+		}
+
+		private void buttonDodaj_Click(object sender, RoutedEventArgs e)
+		{
+			if (validate())
+			{
+				if (buttonDodaj.Content.Equals("Dodaj"))
+				{
+					string naziv = "";
+					naziv = textBoxNaziv.Text + ".rtf";
+
+
+					TextRange textRange;
+					FileStream fileStream;
+					textRange = new TextRange(RichTextBoxBarselona.Document.ContentStart, RichTextBoxBarselona.Document.ContentEnd);
+					fileStream = new FileStream(naziv, FileMode.Create);
+					textRange.Save(fileStream, DataFormats.Rtf);
+					fileStream.Close();
+					this.Close();
+					//datePickerDatum.SelectedDate.Value.Date
+					MainWindow.Barsa.Add(new Class.Barselona(Int32.Parse(textBoxBroj.Text), textBoxNaziv.Text, DateTime.Now, pomocna, naziv));
+				}
+
+			}
+			else
+			{
+				MessageBox.Show("Popunite sva polja!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+
+		}
+
+		private bool validate()
+		{
+			bool result = true;
+
+			if (textBoxNaziv.Text.Trim().Equals("") || textBoxNaziv.Text.Trim().Equals("Unesite naziv igrača"))
+			{
+				result = false;
+				textBoxNaziv.Foreground = Brushes.Red;
+				textBoxNaziv.BorderBrush = Brushes.Red;
+				textBoxNaziv.BorderThickness = new Thickness(1);
+				textBoxGreskaNaziv.Text = "Obavezno popuniti!";
+				textBoxGreskaNaziv.Foreground = Brushes.Red;
+			}
+			else
+			{
+				textBoxNaziv.Foreground = Brushes.Black;
+				textBoxNaziv.BorderBrush = Brushes.Green;
+				textBoxNaziv.BorderThickness = new Thickness(1);
+				textBoxGreskaNaziv.Text = "";
+				textBoxGreskaNaziv.Foreground = Brushes.Gray;
+
+			}
+
+			if (textBoxBroj.Text.Trim().Equals("") || textBoxBroj.Text.Trim().Equals("Unesite broj dresa"))
+			{
+				result = false;
+				textBoxBroj.Foreground = Brushes.Red;
+				textBoxBroj.BorderBrush = Brushes.Red;
+				textBoxBroj.BorderThickness = new Thickness(1);
+				textBoxGreskaBroj.Text = "Obavezno popuniti!";
+				textBoxGreskaBroj.Foreground = Brushes.Red;
+
+			}
+			else
+			{
+
+				bool broj = int.TryParse(textBoxBroj.Text, out _);
+				if (broj)
+				{
+					if (Int32.Parse(textBoxBroj.Text) > 0)
+					{
+						textBoxBroj.Foreground = Brushes.Black;
+						textBoxBroj.BorderBrush = Brushes.Green;
+						textBoxBroj.BorderThickness = new Thickness(1);
+						textBoxGreskaBroj.Text = "";
+					}
+					else
+					{
+						result = false;
+						textBoxBroj.Foreground = Brushes.Red;
+						textBoxBroj.BorderBrush = Brushes.Red;
+						textBoxBroj.BorderThickness = new Thickness(1);
+						textBoxGreskaBroj.Text = "Unesite pozitivan broj!";
+						textBoxGreskaBroj.BorderBrush = Brushes.Red;
+					}
+
+				}
+				else
+				{
+					result = false;
+					textBoxBroj.Foreground = Brushes.Red;
+					textBoxBroj.BorderBrush = Brushes.Red;
+					textBoxBroj.BorderThickness = new Thickness(1);
+					textBoxGreskaBroj.Text = "Unesite broj!";
+					textBoxGreskaBroj.BorderBrush = Brushes.Red;
+
+				}
+			}
+
+			if (textBoxSlika.Text.Trim().Equals("Slika"))
+			{
+				result = false;
+				borderSlika.BorderBrush = Brushes.Red;
+				borderSlika.BorderThickness = new Thickness(1);
+				labelaGreskaSlika.Content = "Obavezno!";
+				labelaGreskaSlika.Background = Brushes.LightGray;
+				labelaGreskaSlika.Foreground = Brushes.Red;
+				labelaGreskaSlika.BorderThickness = new Thickness(1);
+
+
+
+			}
+			else
+			{
+				borderSlika.BorderBrush = Brushes.Green;
+				borderSlika.BorderThickness = new Thickness(0);
+				labelaGreskaSlika.Content = "";
+				labelaGreskaSlika.BorderThickness = new Thickness(0);
+				textBoxSlika.Text = "";
+			}
+
+			//if (DateTime.Now == null)
+			//{
+			//	result = false;
+			//	labelaGreskaDatum.FontSize = 12;
+			//	labelaGreskaDatum.Content = "Obavezno polje!";
+			//	labelaGreskaDatum.Foreground = Brushes.Red;
+			//	labelaGreskaDatum.BorderBrush = Brushes.Red;
+			//	labelaGreskaDatum.BorderThickness = new Thickness(1);
+
+			//}
+			//else
+			//{
+			//	labelaGreskaDatum.Content = "";
+			//	labelaGreskaDatum.BorderThickness = new Thickness(0);
+
+			//}
+			return result;
+		}
+
+		private void buttonBrowse_Click(object sender, RoutedEventArgs e)
+		{
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+			if (openFileDialog.ShowDialog() == true)
+			{
+				pomocna = openFileDialog.FileName;
+				Uri uri = new Uri(pomocna);
+				imageSlika.Source = new BitmapImage(uri);
+				textBoxSlika.Text = "";
+			}
+
+		}
+
+		private void ComboBoxFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (ComboBoxFamily.SelectedItem != null && !RichTextBoxBarselona.Selection.IsEmpty)
+			{
+				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, ComboBoxFamily.SelectedItem);
+			}
+
+		}
+
+		private void ComboBoxSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (ComboBoxSize.SelectedValue != null && !RichTextBoxBarselona.Selection.IsEmpty)
+			{
+				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontSizeProperty, ComboBoxSize.SelectedValue);
+			}
+
+		}
+
+		private void ComboBoxColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (ComboBoxColor.SelectedValue != null && !RichTextBoxBarselona.Selection.IsEmpty)
+			{
+				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.ForegroundProperty, ComboBoxColor.SelectedValue);
+			}
+
+		}
+
+
+
+		private void RichTextBoxBarselona_SelectionChanged(object sender, RoutedEventArgs e)
+		{
+			object temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontStyleProperty);
+			tglButtonItalic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
+
+			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontWeightProperty);
+			tglButtonBold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
+
+			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+			tglButtonUnderline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
+
+			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+			ComboBoxFamily.SelectedItem = temp;
+
+			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontSizeProperty);
+			ComboBoxSize.Text = temp.ToString();
+
+			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.ForegroundProperty);
+
+		}
+		private void CountWords()
+		{
+			int count = 0;
+			int index = 0;
+			string richText = new TextRange(RichTextBoxBarselona.Document.ContentStart, RichTextBoxBarselona.Document.ContentEnd).Text;
+
+			while (index < richText.Length && char.IsWhiteSpace(richText[index]))
+			{
+				index++;
+			}
+
+			while (index < richText.Length)
+			{
+				while (index < richText.Length && !char.IsWhiteSpace(richText[index]))
+					index++;
+
+				count++;
+
+				while (index < richText.Length && char.IsWhiteSpace(richText[index]))
+					index++;
+
+			}
+			TextBlockBrojReci.Text = count.ToString();
+
+		}
+
+		private void RichTextBoxBarselona_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			CountWords();
+
+		}
+
+		private void UIPath_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			this.DragMove();
+		}
+
+		private void textBoxNaziv_LostFocus(object sender, RoutedEventArgs e)
+		{
+			if (textBoxNaziv.Text.Trim().Equals(string.Empty))
+			{
+				textBoxNaziv.Text = "Unesite naziv igrača";
+				textBoxNaziv.Foreground = Brushes.Thistle;
+			}
+
+		}
+
+		private void textBoxBroj_LostFocus(object sender, RoutedEventArgs e)
+		{
+			if (textBoxBroj.Text.Trim().Equals(string.Empty))
+			{
+				textBoxBroj.Text = "Unesite broj dresa";
+				textBoxBroj.Foreground = Brushes.Thistle;
+			}
+
+		}
+
+		private void textBoxNaziv_GotFocus(object sender, RoutedEventArgs e)
+		{
+			if (textBoxNaziv.Text.Trim().Equals("Unesite naziv igrača"))
+			{
+				textBoxNaziv.Text = "";
+				textBoxNaziv.Foreground = Brushes.Black;
+			}
+
+		}
+
+		private void textBoxBroj_GotFocus(object sender, RoutedEventArgs e)
+		{
+			if (textBoxBroj.Text.Trim().Equals("Unesite broj dresa"))
+			{
+				textBoxBroj.Text = "";
+				textBoxBroj.Foreground = Brushes.Black;
+			}
+
 		}
 	}
 }
