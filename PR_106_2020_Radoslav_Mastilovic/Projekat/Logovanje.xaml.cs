@@ -35,48 +35,48 @@ namespace Projekat
 		{
 			if (Validate())
 			{
-				if (textBoxIme.Text.Trim().Equals("admin") && passwordBoxSifra.Password.Equals("123"))
+				if (textBoxIme.Text.Trim().Equals("admin") && passwordBoxSifra.Password.Equals("admin123"))
 				{
 
 
 					ime = "admin";
-					sifra = "123";
+					sifra = "admin123";
 					MainWindow window = new MainWindow();
 					window.ShowDialog();
 
 
 				}
-				else if (textBoxIme.Text.Trim().Equals("posjetioc") && passwordBoxSifra.Password.Equals("123"))
+				else if (textBoxIme.Text.Trim().Equals("posjetioc") && passwordBoxSifra.Password.Equals("posjetioc123"))
 				{
 
 					ime = "posjetioc";
-					sifra = "123";
+					sifra = "posjetioc123";
 					MainWindow window = new MainWindow();
-					//window.dataGridBarselona.CanUserAddRows = false;
-					//window.dataGridBarselona.CanUserDeleteRows = false;
-					//window.dataGridBarselona.CanUserReorderColumns = false;
-					//window.dataGridBarselona.CanUserResizeColumns = false;
-					//window.dataGridBarselona.CanUserResizeRows = false;
-					//window.dataGridBarselona.CanUserSortColumns = false;
-					//window.buttonObrisi.Visibility = Visibility.Hidden;
-					//window.buttonDodaj.Visibility = Visibility.Hidden;
+					window.dataGridBarselona.CanUserAddRows = false;
+					window.dataGridBarselona.CanUserDeleteRows = false;
+					window.dataGridBarselona.CanUserReorderColumns = false;
+					window.dataGridBarselona.CanUserResizeColumns = false;
+					window.dataGridBarselona.CanUserResizeRows = false;
+					window.dataGridBarselona.CanUserSortColumns = false;
+					window.buttonObrisi.Visibility = Visibility.Hidden;
+					window.buttonDodaj.Visibility = Visibility.Hidden;
 					window.ShowDialog();
 				}
 				else
 				{
-					if (textBoxIme.Text.Trim().Equals("admin") && !passwordBoxSifra.Password.Equals("123"))
+					if (textBoxIme.Text.Trim().Equals("admin") && !passwordBoxSifra.Password.Equals("admin123"))
 					{
 						passwordBoxSifra.Password = "";
 						labelSifraGreska.Content = "Pogresna sifra za admina";
 						passwordBoxSifra.BorderBrush = Brushes.Red;
 					}
-					else if (!textBoxIme.Text.Trim().Equals("admin") && passwordBoxSifra.Password.Equals("123"))
+					else if (!textBoxIme.Text.Trim().Equals("admin") && passwordBoxSifra.Password.Equals("admin123"))
 					{
 						textBoxIme.Text = "";
 						labelImeGreska.Content = "Pogresno ime za admina";
 						textBoxIme.BorderBrush = Brushes.Red;
 					}
-					if (textBoxIme.Text.Trim().Equals("posjetioc") && !passwordBoxSifra.Password.Equals("123"))
+					if (textBoxIme.Text.Trim().Equals("posjetioc") && !passwordBoxSifra.Password.Equals("posjetioc123"))
 					{
 						passwordBoxSifra.Password = "";
 						labelSifraGreska.Content = "Pogresna sifra za posjetioca";
@@ -84,14 +84,14 @@ namespace Projekat
 
 
 					}
-					else if (!textBoxIme.Text.Trim().Equals("posjetioc") && passwordBoxSifra.Password.Equals("123"))
+					else if (!textBoxIme.Text.Trim().Equals("posjetioc") && passwordBoxSifra.Password.Equals("posjetioc123"))
 					{
 						textBoxIme.Text = "";
 						labelImeGreska.Content = "Pogresno ime za posjetioca";
 						textBoxIme.BorderBrush = Brushes.Red;
 
 					}
-					if (!textBoxIme.Text.Trim().Equals("admin") && !passwordBoxSifra.Password.Equals("123") || !textBoxIme.Text.Trim().Equals("posjetioc") && !passwordBoxSifra.Password.Equals("123"))
+					if (!textBoxIme.Text.Trim().Equals("admin") && !passwordBoxSifra.Password.Equals("admin123") || !textBoxIme.Text.Trim().Equals("posjetioc") && !passwordBoxSifra.Password.Equals("posjetioc123"))
 					{
 						passwordBoxSifra.Password = "";
 						labelSifraGreska.Content = "Pogresna sifra";

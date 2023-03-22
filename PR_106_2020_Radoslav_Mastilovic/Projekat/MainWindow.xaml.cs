@@ -88,14 +88,14 @@ namespace Projekat
 			Logovanje logovanje = new Logovanje();
 
 
-			if (Logovanje.ime.Equals("admin") && Logovanje.sifra.Equals("123"))
+			if (Logovanje.ime.Equals("admin") && Logovanje.sifra.Equals("admin123"))
 			{
 				Izmeni izmijeni = new Izmeni(dataGridBarselona.SelectedIndex);
 				izmijeni.ShowDialog();
 
 
 			}
-			else if (Logovanje.ime.Equals("posjetioc") && Logovanje.sifra.Equals("123"))
+			else if (Logovanje.ime.Equals("posjetioc") && Logovanje.sifra.Equals("posjetioc123"))
 			{
 				Procitaj procitaj = new Procitaj(dataGridBarselona.SelectedIndex);
 				procitaj.textBoxNaziv.IsEnabled = false;
