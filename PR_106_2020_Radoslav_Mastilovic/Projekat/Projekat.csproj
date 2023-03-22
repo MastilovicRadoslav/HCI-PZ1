@@ -139,5 +139,8 @@
     <Resource Include="Slike\Pozadina1.jpg" />
     <Resource Include="Slike\Underline.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Igraci\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
