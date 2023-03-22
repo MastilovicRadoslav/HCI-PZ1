@@ -15,7 +15,7 @@
     <Grid>
         <Border CornerRadius="12">
             <Border.Background>
-                <ImageBrush ImageSource="/Slike/slika3.jpg"
+                <ImageBrush ImageSource="/Slike/Pozadina.jpg"
                         Stretch="None"/>
             </Border.Background>
 
@@ -128,7 +128,7 @@
                             Grid.Row="2"
                             Orientation="Vertical"
                             Margin="0 35 0 0">
-                        <Image Source="/Slike/slika7.png"
+                        <Image Source="/Slike/Grb.png"
                            Width="200" Height="100" Margin="0" Stretch="Uniform" />
 
                         <TextBlock Text="Prijavite se ili kao admin ili kao posjetilac na stranicu FK Barselona."
@@ -165,7 +165,7 @@
                             >
 
                             <TextBox.Background>
-                                <ImageBrush ImageSource="/Slike/slika2.jpg" 
+                                <ImageBrush ImageSource="/Slike/Korisnik.jpg" 
                                             Stretch="Uniform"
                                             AlignmentX="Left"
                                         
@@ -204,7 +204,7 @@
                              LostFocus="passwordBoxSifra_LostFocus">
 
                             <PasswordBox.Background>
-                                <ImageBrush ImageSource="/Slike/slika6.png" 
+                                <ImageBrush ImageSource="/Slike/Kljuc.png" 
                                             Stretch="Uniform"
                                             AlignmentX="Left"/>
                             </PasswordBox.Background>

@@ -131,13 +131,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Slike\Bold.png" />
-    <Resource Include="Slike\italic.png" />
+    <Resource Include="Slike\Grb.png" />
+    <Resource Include="Slike\Italic.png" />
+    <Resource Include="Slike\Kljuc.png" />
+    <Resource Include="Slike\Korisnik.jpg" />
     <Resource Include="Slike\Pozadina.jpg" />
-    <Resource Include="Slike\Pozadina2.jpg" />
-    <Resource Include="Slike\slika2.jpg" />
-    <Resource Include="Slike\slika3.jpg" />
-    <Resource Include="Slike\slika6.png" />
-    <Resource Include="Slike\slika7.png" />
+    <Resource Include="Slike\Pozadina1.jpg" />
     <Resource Include="Slike\Underline.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

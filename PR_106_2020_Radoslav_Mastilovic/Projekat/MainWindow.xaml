@@ -17,7 +17,7 @@
         <!--Oblik Barselona grba-->
         <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="737" Stretch="Fill" Width="917" RenderTransformOrigin="0.511,0.659">
             <Path.Fill>
-                <ImageBrush ImageSource="/Slike/slika3.jpg" Opacity="0.9"/>
+                <ImageBrush ImageSource="/Slike/Pozadina.jpg" Opacity="0.9"/>
             </Path.Fill>
             <Path.Data>
                 <PathGeometry>

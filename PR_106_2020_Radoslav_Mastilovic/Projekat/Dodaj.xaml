@@ -14,7 +14,7 @@
         <!--Oblik Barselona grba-->
         <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="690" Stretch="Fill" Width="970" RenderTransformOrigin="0.511,0.659" MouseLeftButtonDown="UIPath_MouseLeftButtonDown">
             <Path.Fill>
-                <ImageBrush ImageSource="/Slike/Pozadina2.jpg" Opacity="0.9"/>
+                <ImageBrush ImageSource="/Slike/Pozadina1.jpg" Opacity="0.9"/>
             </Path.Fill>
 
             <Path.Data>
@@ -182,7 +182,7 @@
             <DockPanel >
                 <ToolBar BorderThickness="1" BorderBrush="Black" Width="275" Height="24" Canvas.Left="370" Margin="170,45,0,0">
                     <ToggleButton Command="EditingCommands.ToggleItalic" x:Name="tglButtonItalic" >
-                        <Image Source="/Slike/italic.png"/>
+                        <Image Source="/Slike/Italic.png"/>
                     </ToggleButton>
                     <ToggleButton Command="EditingCommands.ToggleBold" x:Name="tglButtonBold" >
                         <Image Source="/Slike/Bold.png"/>

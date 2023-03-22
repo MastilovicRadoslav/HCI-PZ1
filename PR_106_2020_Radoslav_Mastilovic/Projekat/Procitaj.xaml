@@ -15,7 +15,7 @@
 
         <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="690" Stretch="Fill" Width="970" RenderTransformOrigin="0.511,0.659" MouseLeftButtonDown="UIPath_MouseLeftButtonDown">
             <Path.Fill>
-                <ImageBrush ImageSource="/Slike/Pozadina2.jpg" Opacity="0.9"/>
+                <ImageBrush ImageSource="/Slike/Pozadina1.jpg" Opacity="0.9"/>
             </Path.Fill>
 
             <Path.Data>
