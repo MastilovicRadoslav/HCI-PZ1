@@ -204,20 +204,34 @@
 
                 </ToolBar>
             </DockPanel>
-            <RichTextBox x:Name="RichTextBoxBarselona" SelectionChanged="RichTextBoxBarselona_SelectionChanged" TextChanged="RichTextBoxBarselona_TextChanged" Canvas.Left="384" Width="260" Margin="378,312,217,160" BorderBrush="Black" />
+            <RichTextBox x:Name="RichTextBoxBarselona" 
+                         SelectionChanged="RichTextBoxBarselona_SelectionChanged" 
+                         TextChanged="RichTextBoxBarselona_TextChanged" 
+                         Canvas.Left="384" 
+                         Width="260" 
+                         Margin="378,312,217,160" 
+                         BorderBrush="Black" 
+                         GotFocus="RichTextBoxBarselona_GotFocus"
+                         LostFocus="RichTextBoxBarselona_LostFocus">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Name="RichTextBoxText" Text="Unesite opis igrača" Foreground="Gray"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
 
 
         </Grid>
 
         <TextBox x:Name="textBoxSlika" IsReadOnly="True" Canvas.Left="384" Canvas.Top="407" Width="121" Height="63" Text="Slika" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Image Margin="20 0 0 0" x:Name="imageSlika" Width="122" Height="62" Canvas.Left="397" Canvas.Top="408" RenderTransformOrigin="0.25,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <DatePicker Name="datePickerDatum" FontSize="15" Canvas.Left="517" Canvas.Top="424" HorizontalAlignment="Left" VerticalAlignment="Center" Width="132"/>
+        <DatePicker Name="datePickerDatum" FontSize="15" Canvas.Left="511" Canvas.Top="407" HorizontalAlignment="Left" VerticalAlignment="Top" Width="132" MouseEnter="datePickerDatum_MouseEnter"/>
         <TextBox x:Name="textBoxGreskaNaziv" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap" Text="" Width="250" VerticalContentAlignment="Center" Canvas.Left="386" Canvas.Top="194" Background="#00000000" BorderThickness="0"  Height="20"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" />
         <TextBox x:Name="textBoxGreskaBroj" IsReadOnly="True" TextAlignment="Center"  TextWrapping="Wrap" Text="" Width="250" VerticalContentAlignment="Center" Canvas.Left="384" Canvas.Top="263" Background="#00000000" BorderThickness="0" Height="20" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" />
         <Border x:Name="borderSlika" Height="62" Width="119" Canvas.Left="386" Canvas.Top="407" HorizontalAlignment="Center" VerticalAlignment="Top" >
             <Label Name="labelaGreskaSlika" Content=""  Width="80" Height="25" Margin="431,61,-431,-46"/>
         </Border>
-        <Label Name="labelaGreskaDatum" Content="" Width="118" Canvas.Left="759" Canvas.Top="303" Height="26" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Name="labelaGreskaDatum" Content="" Width="132" Canvas.Left="511" Canvas.Top="440" Height="32" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Rectangle Fill="#FF707070"  Margin="-2 8 0 0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="790" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
         <Rectangle Fill="#FF707070" Margin="-10 -5 0 0" Height="8" Canvas.Left="64" Stroke="Black" Canvas.Top="125" Width="865" HorizontalAlignment="Left" VerticalAlignment="Center" RadiusX="3.5" RadiusY="3.5"/>
 

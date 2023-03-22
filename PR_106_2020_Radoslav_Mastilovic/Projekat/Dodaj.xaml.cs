@@ -22,7 +22,7 @@ namespace Projekat
 	/// </summary>
 	public partial class Dodaj : Window
 	{
-		private string pomocna = "";
+		private string slika = "";
 		public Dodaj()
 		{
 			#region Podešavanje početnih vrijednosti
@@ -72,7 +72,7 @@ namespace Projekat
 
 					//datePickerDatum.SelectedDate.Value.Date
 
-					Barselona igrac = new Barselona(Int32.Parse(textBoxBroj.Text), textBoxNaziv.Text, DateTime.Now, pomocna, naziv);
+					Barselona igrac = new Barselona(Int32.Parse(textBoxBroj.Text), textBoxNaziv.Text, DateTime.Now, slika, naziv);
 					MainWindow.Barsa.Add(igrac);
 				}
 
@@ -255,47 +255,51 @@ namespace Projekat
 
 		#endregion
 
+		#region RichTextBox opis igrača
+
+		private void RichTextBoxBarselona_GotFocus(object sender, RoutedEventArgs e)
+		{
+			if(RichTextBoxText.Text.Trim().Equals("Unesite opis igrača"))
+			{
+				RichTextBoxText.Text = "";
+				RichTextBoxText.Foreground = Brushes.Black;
+			}
+		}
+
+		private void RichTextBoxBarselona_LostFocus(object sender, RoutedEventArgs e)
+		{
+			if (RichTextBoxText.Text.Trim().Equals(String.Empty))
+			{
+				RichTextBoxText.Text = "Unesite opis igrača";
+				RichTextBoxText.Foreground = Brushes.Gray;
+			}
+		}
+		#endregion
+
+		#region Datum
+		private void datePickerDatum_MouseEnter(object sender, MouseEventArgs e)
+		{
+			datePickerDatum.Text = DateTime.Now.ToString();
+		}
+		#endregion
+
+		#region Dugme za dodavanje slike
 		private void buttonBrowse_Click(object sender, RoutedEventArgs e)
 		{
+			textBoxSlika.Visibility = Visibility.Hidden;
+			textBoxSlika.Text = "";
+
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			if (openFileDialog.ShowDialog() == true)
 			{
-				pomocna = openFileDialog.FileName;
-				Uri uri = new Uri(pomocna);
-				imageSlika.Source = new BitmapImage(uri);
-				textBoxSlika.Text = "";
+				slika = openFileDialog.FileName;
+				Uri fileUri = new Uri(slika);
+				imageSlika.Source = new BitmapImage(fileUri);
 			}
-
 		}
+		#endregion
 
-		private void ComboBoxFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			if (ComboBoxFamily.SelectedItem != null && !RichTextBoxBarselona.Selection.IsEmpty)
-			{
-				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, ComboBoxFamily.SelectedItem);
-			}
-
-		}
-
-		private void ComboBoxSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			if (ComboBoxSize.SelectedValue != null && !RichTextBoxBarselona.Selection.IsEmpty)
-			{
-				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontSizeProperty, ComboBoxSize.SelectedValue);
-			}
-
-		}
-
-		private void ComboBoxColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			if (ComboBoxColor.SelectedValue != null && !RichTextBoxBarselona.Selection.IsEmpty)
-			{
-				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.ForegroundProperty, ComboBoxColor.SelectedValue);
-			}
-
-		}
-
-
+		#region Promjena u RichTextBoxu
 
 		private void RichTextBoxBarselona_SelectionChanged(object sender, RoutedEventArgs e)
 		{
@@ -317,6 +321,44 @@ namespace Projekat
 			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.ForegroundProperty);
 
 		}
+		#endregion
+
+		#region Promjena tipa slova
+		private void ComboBoxFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (ComboBoxFamily.SelectedItem != null && !RichTextBoxBarselona.Selection.IsEmpty)
+			{
+				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, ComboBoxFamily.SelectedItem);
+			}
+
+		}
+
+		#endregion
+
+		#region Promjena veličine slova
+		private void ComboBoxSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (ComboBoxSize.SelectedValue != null && !RichTextBoxBarselona.Selection.IsEmpty)
+			{
+				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontSizeProperty, ComboBoxSize.SelectedValue);
+			}
+
+		}
+		#endregion
+
+		#region Promjena boje slova
+		private void ComboBoxColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (ComboBoxColor.SelectedValue != null && !RichTextBoxBarselona.Selection.IsEmpty)
+			{
+				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.ForegroundProperty, ComboBoxColor.SelectedValue);
+			}
+		}
+		#endregion
+
+
+
+		#region Funkcija za prebrojavanje broja rijeci
 		private void CountWords()
 		{
 			int count = 0;
@@ -340,18 +382,22 @@ namespace Projekat
 
 			}
 			TextBlockBrojReci.Text = count.ToString();
-
 		}
+		#endregion
 
+		#region Prikaz broja izbrojanih rijeci
 		private void RichTextBoxBarselona_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			CountWords();
 
 		}
+		#endregion
 
 		private void UIPath_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
 			this.DragMove();
 		}
+
+
 	}
 }

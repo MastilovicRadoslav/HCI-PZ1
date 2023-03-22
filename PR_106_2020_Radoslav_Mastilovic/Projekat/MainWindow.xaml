@@ -225,7 +225,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <!--Naslov-->
-            <Label Content="Kamp Nou" 
+            <Label Content="La Masia" 
                    FontWeight="Bold" 
                    HorizontalAlignment="Left" 
                    Margin="338,70,0,0" 
