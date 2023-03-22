@@ -39,6 +39,7 @@ namespace Projekat
 				{
 
 
+					//MessageBox.Show("Dobrodošli na stranicu FK Barselona kao Admin.", "Obavještenje!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.Yes);
 					ime = "admin";
 					sifra = "admin123";
 					MainWindow window = new MainWindow();
@@ -49,6 +50,7 @@ namespace Projekat
 				else if (textBoxIme.Text.Trim().Equals("posjetioc") && passwordBoxSifra.Password.Equals("posjetioc123"))
 				{
 
+					//MessageBox.Show("Dobrodošli na stranicu FK Barselona kao Posjetilac.", "Obavještenje!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.Yes);
 					ime = "posjetioc";
 					sifra = "posjetioc123";
 					MainWindow window = new MainWindow();

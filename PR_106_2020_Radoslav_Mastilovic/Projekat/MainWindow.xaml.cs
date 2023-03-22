@@ -22,6 +22,7 @@ namespace Projekat
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		#region Dodatna polja
 		private DataIO serializer = new DataIO();
 		public static BindingList<Barselona> Barsa { get; set; }
 
@@ -29,8 +30,13 @@ namespace Projekat
 
 		private static BindingList<Barselona> brisanje = new BindingList<Barselona>();
 		public static BindingList<Barselona> Brisanje { get => brisanje; set => brisanje = value; }
+
+
+		#endregion
+
 		public MainWindow()
 		{
+			#region Inicijalizacija
 
 			//MessageBox.Show("Dobrodošli na stranicu FK Barselona.", "Obavještenje!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.Yes);
 			Barsa = serializer.DeSerializeObject<BindingList<Barselona>>("barselona.xml");
@@ -40,30 +46,46 @@ namespace Projekat
 			}
 
 			DataContext = this;
+
+			#endregion
+
 			InitializeComponent();
 		}
+
+		#region Dugme dodaj
 
 		private void buttonDodaj_Click(object sender, RoutedEventArgs e)
 		{
 			Dodaj dodaj = new Dodaj();
 			dodaj.ShowDialog();
 		}
+		#endregion
 
+		#region Dugme za zatvaranje
 		private void buttonZatvori_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();
 		}
+		#endregion
 
+
+		#region Cuvanje u fajl
 		private void Window_Closing(object sender, CancelEventArgs e)
 		{
 			serializer.SerializeObject<BindingList<Barselona>>(Barsa, "barselona.xml");
 		}
+		#endregion
 
+
+		#region Manipulisanje prozorom
 		private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
 			this.DragMove();
 		}
+		#endregion
 
+
+		#region Dugme obrisi
 		private void buttonObrisi_Click(object sender, RoutedEventArgs e)
 		{
 			if(Barsa.Count > 0)
@@ -77,10 +99,10 @@ namespace Projekat
 			{
 				MessageBox.Show("Nije moguce brisati iz prazne tabele.", "Greska!", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
-
-
 		}
+		#endregion
 
+		#region Hyperlink
 		private void Hyperlink_Click(object sender, RoutedEventArgs e)
 		{
 
@@ -112,5 +134,7 @@ namespace Projekat
 			}
 
 		}
+
+		#endregion
 	}
 }

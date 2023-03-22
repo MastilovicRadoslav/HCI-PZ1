@@ -208,7 +208,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Hyperlink x:Name="Hyperlink" Click="Hyperlink_Click" Foreground="Red">Dodatna opcija</Hyperlink>
+                                    <Hyperlink x:Name="Hyperlink" Click="Hyperlink_Click" Foreground="Blue">Dodatna opcija</Hyperlink>
                                 </TextBlock>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
