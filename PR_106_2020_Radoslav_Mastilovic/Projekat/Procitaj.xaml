@@ -1,0 +1,99 @@
+﻿<Window x:Class="Projekat.Procitaj"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekat"
+        mc:Ignorable="d"
+        Title="Procitaj"
+        Height="800"
+        Width="990"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Canvas Width="1010" Height="800" RenderTransformOrigin="-0.217,0.673">
+
+        <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="690" Stretch="Fill" Width="970" RenderTransformOrigin="0.511,0.659" MouseLeftButtonDown="UIPath_MouseLeftButtonDown">
+            <Path.Fill>
+                <ImageBrush ImageSource="/Slike/Pozadina2.jpg" Opacity="0.9"/>
+            </Path.Fill>
+
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure StartPoint="4, 0">
+                        <LineSegment Point="1, 30"/>
+                        <ArcSegment Point="0, 167" Size="5, 80" RotationAngle="180" IsLargeArc="False" SweepDirection="Clockwise"  />
+                        <ArcSegment  Point="3, 190" RotationAngle="180"  SweepDirection="Clockwise" />
+                        <ArcSegment Size="20, 120" Point="19.6,320" RotationAngle="180" IsLargeArc="False" SweepDirection="Counterclockwise"/>
+                        <ArcSegment Size="2,0" Point="24, 339"  RotationAngle="180"  SweepDirection="Counterclockwise"></ArcSegment>
+                        <ArcSegment Size="0, 2" Point="27.7, 320"  RotationAngle="180"  SweepDirection="Counterclockwise"></ArcSegment>
+                        <ArcSegment Size="250,340" Point="44, 191"  RotationAngle="180"  SweepDirection="Counterclockwise"></ArcSegment>
+                        <ArcSegment  Point="46.8, 165" RotationAngle="180"  SweepDirection="Counterclockwise" />
+                        <ArcSegment Size="42, 190"  Point="46.5, 29" RotationAngle="180"  SweepDirection="Clockwise" />
+                        <LineSegment Point="43.5, 0"/>
+                        <ArcSegment Size="8, 40"  Point="30, 0" RotationAngle="180"  SweepDirection="Clockwise" />
+                        <ArcSegment Size="8, 40"  Point="16.8, 0" RotationAngle="180"  SweepDirection="Clockwise" />
+                        <ArcSegment Size="8, 40"  Point="4, 0" RotationAngle="180"  SweepDirection="Clockwise" />
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+
+
+        <Grid Height="550" Width="906" Canvas.Left="-16">
+            <TextBox x:Name="textBoxNaziv" TextWrapping="Wrap"  BorderThickness="0" Canvas.Top="186" Canvas.Left="300" Background="#00000000" Margin="220,189,292,313" RenderTransformOrigin="0.498,-1.267"/>
+            <Image x:Name="imageSlika" Canvas.Left="280" Canvas.Top="236" Margin="194,237,530,166" />
+            <Button x:Name="buttonZatvori" 
+                    Content="Zatvori" 
+                    Click="buttonZatvori_Click" 
+                    Canvas.Left="606" 
+                    Canvas.Top="473" 
+                    FontSize="25"
+                    FontFamily="Montserrat"
+                    Cursor="Hand" 
+                    Width="220" Height="45"
+                    Margin="581,505,105,0">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" >
+                            <Setter.Value>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue"/>
+                                    <GradientStop Color="SkyBlue" Offset="5"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#278BEF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+
+            </Button>
+
+
+            <RichTextBox x:Name="richTextBoxBarselona" IsReadOnly="True" Canvas.Left="398" Canvas.Top="270" Margin="375,237,248,166"/>
+            <TextBox x:Name="textBoxDatum" Canvas.Left="280" BorderThickness="0" Canvas.Top="354" Height="30" Background="#00000000" Margin="348,389,348,131" />
+            <TextBox x:Name="textBoxBroj" TextWrapping="Wrap"  BorderThickness="0" Canvas.Top="230" Height="30" Canvas.Left="398" Background="#00000000" Margin="563,389,189,131" RenderTransformOrigin="0.483,5.333"/>
+            <Rectangle Fill="#FF707070"  Margin="68,121,-47,0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="867" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
+            <Rectangle Fill="#FF707070" Margin="100,485,0,0" Height="8" Canvas.Left="64" Stroke="Black" Canvas.Top="125" Width="789" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
+
+        </Grid>
+    </Canvas>
+</Window>

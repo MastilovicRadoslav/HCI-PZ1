@@ -5,8 +5,234 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow"
+        SizeToContent="WidthAndHeight"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        d:DesignHeight="483.469"
+        Closing="Window_Closing">
+
+    <Canvas Width="1300" Height="800" RenderTransformOrigin="-0.217,0.673" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        <!--Oblik Barselona grba-->
+        <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="737" Stretch="Fill" Width="917" RenderTransformOrigin="0.511,0.659">
+            <Path.Fill>
+                <ImageBrush ImageSource="/Slike/slika3.jpg" Opacity="0.9"/>
+            </Path.Fill>
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure StartPoint="4, 0">
+                        <LineSegment Point="1, 30"/>
+                        <ArcSegment Point="0, 167" Size="5, 80" RotationAngle="180" IsLargeArc="False" SweepDirection="Clockwise"  />
+                        <ArcSegment  Point="3, 190" RotationAngle="180"  SweepDirection="Clockwise" />
+                        <ArcSegment Size="20, 120" Point="19.6,320" RotationAngle="180" IsLargeArc="False" SweepDirection="Counterclockwise"/>
+                        <ArcSegment Size="2,0" Point="24, 339"  RotationAngle="180"  SweepDirection="Counterclockwise"></ArcSegment>
+                        <ArcSegment Size="0, 2" Point="27.7, 320"  RotationAngle="180"  SweepDirection="Counterclockwise"></ArcSegment>
+                        <ArcSegment Size="250,340" Point="44, 191"  RotationAngle="180"  SweepDirection="Counterclockwise"></ArcSegment>
+                        <ArcSegment  Point="46.8, 165" RotationAngle="180"  SweepDirection="Counterclockwise" />
+                        <ArcSegment Size="42, 190"  Point="46.5, 29" RotationAngle="180"  SweepDirection="Clockwise" />
+                        <LineSegment Point="43.5, 0"/>
+                        <ArcSegment Size="8, 40"  Point="30, 0" RotationAngle="180"  SweepDirection="Clockwise" />
+                        <ArcSegment Size="8, 40"  Point="16.8, 0" RotationAngle="180"  SweepDirection="Clockwise" />
+                        <ArcSegment Size="8, 40"  Point="4, 0" RotationAngle="180"  SweepDirection="Clockwise" />
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+
+        <Grid Canvas.Left="10" Canvas.Top="10">
+            <!--Dodaj-->
+            <Button x:Name="buttonDodaj" 
+                    Content="Dodaj igrača"  
+                    Click="buttonDodaj_Click" 
+                    Canvas.Left="102" 
+                    Canvas.Top="473" 
+                    FontSize="25"
+                    FontFamily="Montserrat"
+                    Cursor="Hand" 
+                    Width="200" Height="45" 
+                    Margin="591,466,127,44"
+                    BorderThickness="0">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" >
+                            <Setter.Value>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue"/>
+                                    <GradientStop Color="SkyBlue" Offset="5"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#278BEF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+            <!--Zatvori-->
+            <Button x:Name="buttonZatvori" 
+                    Content="Zatvori prozor" 
+                    Click="buttonZatvori_Click" 
+                    Canvas.Left="606" 
+                    Canvas.Top="473" 
+                    FontSize="25"
+                    FontFamily="Montserrat"
+                    Cursor="Hand" 
+                    Width="200" Height="45" 
+                    Margin="74,466,662,44">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" >
+                            <Setter.Value>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue"/>
+                                    <GradientStop Color="SkyBlue" Offset="5"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#278BEF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <!--Obrisi-->
+            <Button x:Name="buttonObrisi" 
+                    Content="Obriši" 
+                    Click="buttonObrisi_Click" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    Canvas.Left="606" 
+                    Canvas.Top="473" 
+                    Margin="338,466,0,0" 
+                    FontSize="25"
+                    FontFamily="Montserrat"
+                    Cursor="Hand" 
+                    Width="200" Height="45">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" >
+                            <Setter.Value>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue"/>
+                                    <GradientStop Color="SkyBlue" Offset="5"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#278BEF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <!--Tabelarni prikaz-->
+            <DataGrid x:Name="dataGridBarselona" ItemsSource="{Binding Barsa}"
+                      IsSynchronizedWithCurrentItem="True"
+                      CanUserResizeRows="True"
+                      IsReadOnly="True"
+                      SelectionMode="Extended"
+                      AutoGenerateColumns="False"  
+                      BorderBrush="Black"
+                      BorderThickness="2"
+                      ColumnHeaderHeight="30"
+                      Width="790"
+                      Height="290"
+                      Canvas.Left="232"
+                      Canvas.Top="148"
+                      CanUserResizeColumns="False"
+                      CanUserReorderColumns="False"
+                      RenderTransformOrigin="0.502,0.442"
+                      Margin="54,148,0,117"
+                      HorizontalAlignment="Left"
+                      Background="SkyBlue" >
+
+                <!--Kolone u tabelarnom prikazu-->
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Opcije" Width="*" x:Name="opcije">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox  x:Name="checkObrisi" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!--<DataGridTextColumn Header="Naziv igrača"  Width="*" CanUserResize="False" FontSize="10" Binding="{Binding NazivIgraca}"/>                  
+                    <DataGridTextColumn Header="Broj dresa" Width="*" CanUserResize="False" FontSize="10" Binding="{Binding BrojDresa}" />-->
+
+                    <DataGridTemplateColumn Header="Hiperlink" Width="*"  x:Name="hiperlink" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Hyperlink x:Name="Hyperlink" Click="Hyperlink_Click" Foreground="Red">Dodatna opcija</Hyperlink>
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Slika" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image x:Name="img" Source="{Binding Slika}" Height="40"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn  Header="Datum" Width="*" CanUserResize="False" FontSize="10" Binding="{Binding DatumPrelaska, StringFormat={}{0:dd/MM/yy}}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <!--Naslov-->
+            <Label Content="Kamp Nou" 
+                   FontWeight="Bold" 
+                   HorizontalAlignment="Left" 
+                   Margin="338,70,0,0" 
+                   VerticalAlignment="Top" 
+                   FontSize="50" 
+                   FontStyle="Italic" 
+                   Background="#00000000" 
+                   Foreground="SkyBlue"
+                   />
+        </Grid>
+    </Canvas>
 </Window>

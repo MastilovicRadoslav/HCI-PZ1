@@ -20,9 +20,95 @@ namespace Projekat
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		private DataIO serializer = new DataIO();
+		public static BindingList<Barselona> Barsa { get; set; }
 		public MainWindow()
 		{
+
+			//MessageBox.Show("Dobrodošli na stranicu FK Barselona.", "Obavještenje!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.Yes);
+			Barsa = serializer.DeSerializeObject<BindingList<Barselona>>("barselona.xml");
+			if (Barsa == null)
+			{
+				Barsa = new BindingList<Barselona>();
+			}
+
+			DataContext = this;
 			InitializeComponent();
+		}
+
+		private void buttonDodaj_Click(object sender, RoutedEventArgs e)
+		{
+			Dodaj dodaj = new Dodaj();
+			dodaj.ShowDialog();
+		}
+
+		private void buttonZatvori_Click(object sender, RoutedEventArgs e)
+		{
+			this.Close();
+		}
+
+		private void Window_Closing(object sender, CancelEventArgs e)
+		{
+			serializer.SerializeObject<BindingList<Barselona>>(Barsa, "barselona.xml");
+		}
+
+		private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			this.DragMove();
+		}
+
+		private void buttonObrisi_Click(object sender, RoutedEventArgs e)
+		{
+			var lista = new BindingList<Barselona>();
+
+			if (Barsa.Count > 0)
+			{
+				for (int i = 0; i < Barsa.Count(); i++)
+				{
+					if (dataGridBarselona.IsFocused)
+					{
+						//Barsa.RemoveAt(Barsa[i]);
+					}
+				}
+
+
+				//Barsa.Remove((Barselona)dataGridBarselona.SelectedItem);
+			}
+			else
+			{
+				MessageBox.Show("Nije moguce brisati iz prazne tabele.", "Greska!", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
+
+		private void Hyperlink_Click(object sender, RoutedEventArgs e)
+		{
+
+			Logovanje logovanje = new Logovanje();
+
+
+			if (Logovanje.ime.Equals("admin") && Logovanje.sifra.Equals("123"))
+			{
+				Izmeni izmijeni = new Izmeni(dataGridBarselona.SelectedIndex);
+				izmijeni.ShowDialog();
+
+
+			}
+			else if (Logovanje.ime.Equals("posjetioc") && Logovanje.sifra.Equals("123"))
+			{
+				Procitaj procitaj = new Procitaj(dataGridBarselona.SelectedIndex);
+				procitaj.textBoxNaziv.IsEnabled = false;
+				procitaj.textBoxDatum.IsEnabled = false;
+				procitaj.textBoxBroj.IsEnabled = false;
+				procitaj.richTextBoxBarselona.IsEnabled = false;
+				procitaj.imageSlika.IsEnabled = false;
+				procitaj.ShowDialog();
+
+			}
+			else
+			{
+				MessageBox.Show("Pogresan unos admina ili posjetioca.", "Greska!", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+
 		}
 	}
 }
