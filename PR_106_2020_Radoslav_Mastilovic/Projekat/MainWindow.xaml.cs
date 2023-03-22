@@ -24,6 +24,11 @@ namespace Projekat
 	{
 		private DataIO serializer = new DataIO();
 		public static BindingList<Barselona> Barsa { get; set; }
+
+
+
+		private static BindingList<Barselona> brisanje = new BindingList<Barselona>();
+		public static BindingList<Barselona> Brisanje { get => brisanje; set => brisanje = value; }
 		public MainWindow()
 		{
 
@@ -61,25 +66,19 @@ namespace Projekat
 
 		private void buttonObrisi_Click(object sender, RoutedEventArgs e)
 		{
-			var lista = new BindingList<Barselona>();
-
-			if (Barsa.Count > 0)
+			if(Barsa.Count > 0)
 			{
-				for (int i = 0; i < Barsa.Count(); i++)
+				for (int i = 0; i < brisanje.Count; i++)
 				{
-					if (dataGridBarselona.IsFocused)
-					{
-						//Barsa.RemoveAt(Barsa[i]);
-					}
+					Barsa.Remove(brisanje[i]);
 				}
-
-
-				//Barsa.Remove((Barselona)dataGridBarselona.SelectedItem);
 			}
 			else
 			{
 				MessageBox.Show("Nije moguce brisati iz prazne tabele.", "Greska!", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
+
+
 		}
 
 		private void Hyperlink_Click(object sender, RoutedEventArgs e)

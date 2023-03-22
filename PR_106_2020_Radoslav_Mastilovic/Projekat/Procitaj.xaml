@@ -87,7 +87,7 @@
 
             <RichTextBox x:Name="richTextBoxBarselona" IsReadOnly="True" Canvas.Left="398" Canvas.Top="270" Margin="375,237,248,166"/>
             <TextBox x:Name="textBoxDatum" Canvas.Left="280" BorderThickness="0" Canvas.Top="354" Height="30" Background="#00000000" Margin="348,389,348,131" />
-            <TextBox x:Name="textBoxBroj" TextWrapping="Wrap"  BorderThickness="0" Canvas.Top="230" Height="30" Canvas.Left="398" Background="#00000000" Margin="563,389,189,131" RenderTransformOrigin="0.483,5.333"/>
+            <TextBox x:Name="textBoxBroj" TextWrapping="Wrap"  BorderThickness="0" Canvas.Top="230" Height="30" Canvas.Left="398" Background="#00000000" Margin="563,388,189,131" RenderTransformOrigin="0.483,5.333"/>
             <Rectangle Fill="#FF707070"  Margin="68,121,-47,0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="867" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
             <Rectangle Fill="#FF707070" Margin="100,485,0,0" Height="8" Canvas.Left="64" Stroke="Black" Canvas.Top="125" Width="789" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
 

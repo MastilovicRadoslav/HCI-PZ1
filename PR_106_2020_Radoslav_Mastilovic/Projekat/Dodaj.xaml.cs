@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using Class;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,6 +25,7 @@ namespace Projekat
 		private string pomocna = "";
 		public Dodaj()
 		{
+			#region Podešavanje početnih vrijednosti
 			InitializeComponent();
 			textBoxNaziv.Text = "Unesite naziv igrača";
 			textBoxNaziv.Foreground = Brushes.Thistle;
@@ -38,14 +40,18 @@ namespace Projekat
 			ComboBoxFamily.SelectedIndex = 2;
 			ComboBoxColor.ItemsSource = new List<string>() { "Black", "White", "Yellow", "Red", "Purple", "Orange", "Green", "Brown", "Blue" };
 			ComboBoxColor.SelectedIndex = 0;
+			#endregion	
 		}
 
 
+		#region Dugme za izlaz
 		private void buttonIzađi_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();
 		}
+		#endregion
 
+		#region Dugme za dodavanje igraca
 		private void buttonDodaj_Click(object sender, RoutedEventArgs e)
 		{
 			if (validate())
@@ -63,8 +69,11 @@ namespace Projekat
 					textRange.Save(fileStream, DataFormats.Rtf);
 					fileStream.Close();
 					this.Close();
+
 					//datePickerDatum.SelectedDate.Value.Date
-					MainWindow.Barsa.Add(new Class.Barselona(Int32.Parse(textBoxBroj.Text), textBoxNaziv.Text, DateTime.Now, pomocna, naziv));
+
+					Barselona igrac = new Barselona(Int32.Parse(textBoxBroj.Text), textBoxNaziv.Text, DateTime.Now, pomocna, naziv);
+					MainWindow.Barsa.Add(igrac);
 				}
 
 			}
@@ -74,11 +83,14 @@ namespace Projekat
 			}
 
 		}
+		#endregion
 
+		#region Validacija unosa
 		private bool validate()
 		{
 			bool result = true;
 
+			#region Naziv
 			if (textBoxNaziv.Text.Trim().Equals("") || textBoxNaziv.Text.Trim().Equals("Unesite naziv igrača"))
 			{
 				result = false;
@@ -97,7 +109,10 @@ namespace Projekat
 				textBoxGreskaNaziv.Foreground = Brushes.Gray;
 
 			}
+			#endregion
 
+
+			#region BrojDresa
 			if (textBoxBroj.Text.Trim().Equals("") || textBoxBroj.Text.Trim().Equals("Unesite broj dresa"))
 			{
 				result = false;
@@ -143,6 +158,9 @@ namespace Projekat
 
 				}
 			}
+			#endregion
+
+			#region Slika
 
 			if (textBoxSlika.Text.Trim().Equals("Slika"))
 			{
@@ -165,25 +183,77 @@ namespace Projekat
 				labelaGreskaSlika.BorderThickness = new Thickness(0);
 				textBoxSlika.Text = "";
 			}
+			#endregion
 
-			//if (DateTime.Now == null)
-			//{
-			//	result = false;
-			//	labelaGreskaDatum.FontSize = 12;
-			//	labelaGreskaDatum.Content = "Obavezno polje!";
-			//	labelaGreskaDatum.Foreground = Brushes.Red;
-			//	labelaGreskaDatum.BorderBrush = Brushes.Red;
-			//	labelaGreskaDatum.BorderThickness = new Thickness(1);
+			#region Datum 
+			if (DateTime.Now == null)
+			{
+				result = false;
+				labelaGreskaDatum.FontSize = 12;
+				labelaGreskaDatum.Content = "Obavezno polje!";
+				labelaGreskaDatum.Foreground = Brushes.Red;
+				labelaGreskaDatum.BorderBrush = Brushes.Red;
+				labelaGreskaDatum.BorderThickness = new Thickness(1);
 
-			//}
-			//else
-			//{
-			//	labelaGreskaDatum.Content = "";
-			//	labelaGreskaDatum.BorderThickness = new Thickness(0);
+			}
+			else
+			{
+				labelaGreskaDatum.Content = "";
+				labelaGreskaDatum.BorderThickness = new Thickness(0);
 
-			//}
+			}
+			#endregion
 			return result;
 		}
+		#endregion
+
+		#region TextBox Naziv
+
+		private void textBoxNaziv_GotFocus(object sender, RoutedEventArgs e)
+		{
+			if (textBoxNaziv.Text.Trim().Equals("Unesite naziv igrača"))
+			{
+				textBoxNaziv.Text = "";
+				textBoxNaziv.Foreground = Brushes.Black;
+			}
+
+		}
+
+		private void textBoxNaziv_LostFocus(object sender, RoutedEventArgs e)
+		{
+			if (textBoxNaziv.Text.Trim().Equals(string.Empty))
+			{
+				textBoxNaziv.Text = "Unesite naziv igrača";
+				textBoxNaziv.Foreground = Brushes.Gray;
+			}
+
+		}
+		#endregion
+
+
+		#region TextBox Broj dresa
+
+		private void textBoxBroj_GotFocus(object sender, RoutedEventArgs e)
+		{
+			if (textBoxBroj.Text.Trim().Equals("Unesite broj dresa"))
+			{
+				textBoxBroj.Text = "";
+				textBoxBroj.Foreground = Brushes.Black;
+			}
+
+		}
+
+		private void textBoxBroj_LostFocus(object sender, RoutedEventArgs e)
+		{
+			if (textBoxBroj.Text.Trim().Equals(string.Empty))
+			{
+				textBoxBroj.Text = "Unesite broj dresa";
+				textBoxBroj.Foreground = Brushes.Gray;
+			}
+
+		}
+
+		#endregion
 
 		private void buttonBrowse_Click(object sender, RoutedEventArgs e)
 		{
@@ -282,46 +352,6 @@ namespace Projekat
 		private void UIPath_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
 			this.DragMove();
-		}
-
-		private void textBoxNaziv_LostFocus(object sender, RoutedEventArgs e)
-		{
-			if (textBoxNaziv.Text.Trim().Equals(string.Empty))
-			{
-				textBoxNaziv.Text = "Unesite naziv igrača";
-				textBoxNaziv.Foreground = Brushes.Thistle;
-			}
-
-		}
-
-		private void textBoxBroj_LostFocus(object sender, RoutedEventArgs e)
-		{
-			if (textBoxBroj.Text.Trim().Equals(string.Empty))
-			{
-				textBoxBroj.Text = "Unesite broj dresa";
-				textBoxBroj.Foreground = Brushes.Thistle;
-			}
-
-		}
-
-		private void textBoxNaziv_GotFocus(object sender, RoutedEventArgs e)
-		{
-			if (textBoxNaziv.Text.Trim().Equals("Unesite naziv igrača"))
-			{
-				textBoxNaziv.Text = "";
-				textBoxNaziv.Foreground = Brushes.Black;
-			}
-
-		}
-
-		private void textBoxBroj_GotFocus(object sender, RoutedEventArgs e)
-		{
-			if (textBoxBroj.Text.Trim().Equals("Unesite broj dresa"))
-			{
-				textBoxBroj.Text = "";
-				textBoxBroj.Foreground = Brushes.Black;
-			}
-
 		}
 	}
 }
