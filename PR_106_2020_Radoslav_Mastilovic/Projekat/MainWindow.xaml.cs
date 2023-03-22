@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,14 +24,14 @@ namespace Projekat
 	public partial class MainWindow : Window
 	{
 		#region Dodatna polja
+
 		private DataIO serializer = new DataIO();
 		public static BindingList<Barselona> Barsa { get; set; }
 
-
+		public static bool cbOznacen = false;					
 
 		private static BindingList<Barselona> brisanje = new BindingList<Barselona>();
 		public static BindingList<Barselona> Brisanje { get => brisanje; set => brisanje = value; }
-
 
 		#endregion
 
@@ -66,14 +67,17 @@ namespace Projekat
 		{
 			this.Close();
 		}
+
 		#endregion
 
 
 		#region Cuvanje u fajl
+
 		private void Window_Closing(object sender, CancelEventArgs e)
 		{
 			serializer.SerializeObject<BindingList<Barselona>>(Barsa, "barselona.xml");
 		}
+
 		#endregion
 
 
@@ -94,6 +98,22 @@ namespace Projekat
 				{
 					Barsa.Remove(brisanje[i]);
 				}
+
+				for (int i = 0; i < brisanje.Count; i++)
+				{
+					if (brisanje[i] != null)
+					{
+						string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, brisanje[i].Fajl);
+						try
+						{
+							File.Delete(filePath);
+						}
+						catch (IOException exp)
+						{
+							Console.WriteLine(exp.Message);
+						}
+					}
+				}
 			}
 			else
 			{
@@ -101,6 +121,18 @@ namespace Projekat
 			}
 		}
 		#endregion
+
+		#region Promjena selekcije u DataGrid
+		private void dataGridBarselona_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (cbOznacen == true)
+			{
+				brisanje.Add((Barselona)dataGridBarselona.SelectedItem);
+			}
+			cbOznacen = false;
+		}
+		#endregion
+
 
 		#region Hyperlink
 		private void Hyperlink_Click(object sender, RoutedEventArgs e)
@@ -136,5 +168,11 @@ namespace Projekat
 		}
 
 		#endregion
+
+		private void cbBrisanje_MouseEnter(object sender, MouseEventArgs e)
+		{
+			cbOznacen = true;
+
+		}
 	}
 }

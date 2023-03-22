@@ -187,7 +187,8 @@
                       RenderTransformOrigin="0.502,0.442"
                       Margin="54,148,0,117"
                       HorizontalAlignment="Left"
-                      Background="SkyBlue" >
+                      Background="SkyBlue" 
+                      SelectionChanged="dataGridBarselona_SelectionChanged">
 
                 <!--Kolone u tabelarnom prikazu-->
                 <DataGrid.Columns>
@@ -195,7 +196,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate x:Name="Brisanje">
                                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <CheckBox x:Name="cbBrisanje" IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <CheckBox x:Name="cbBrisanje" IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="cbBrisanje_MouseEnter"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
