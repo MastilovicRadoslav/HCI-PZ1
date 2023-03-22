@@ -202,6 +202,28 @@ namespace Projekat
 				labelaGreskaDatum.BorderThickness = new Thickness(0);
 
 			}
+
+
+			#region RichTextBox
+			if (RichTextBoxText.Text.Trim().Equals("Unesite opis igrača") || RichTextBoxText.Text.Trim().Equals(""))
+			{
+				result = false;
+				RichTextBoxText.Text = "Obavezno polje!";
+				RichTextBoxText.Foreground = Brushes.Red;
+				RichTextBoxBarselona.BorderBrush= Brushes.Red;
+				RichTextBoxBarselona.BorderThickness = new Thickness(1);
+
+			}
+			else
+			{
+				RichTextBoxText.Foreground = Brushes.Black;
+				RichTextBoxBarselona.BorderBrush = Brushes.Gray;
+				
+
+			}
+			#endregion
+
+
 			#endregion
 			return result;
 		}
@@ -259,7 +281,7 @@ namespace Projekat
 
 		private void RichTextBoxBarselona_GotFocus(object sender, RoutedEventArgs e)
 		{
-			if(RichTextBoxText.Text.Trim().Equals("Unesite opis igrača"))
+			if(RichTextBoxText.Text.Trim().Equals("Unesite opis igrača") || RichTextBoxText.Text.Trim().Equals("Obavezno polje!"))
 			{
 				RichTextBoxText.Text = "";
 				RichTextBoxText.Foreground = Brushes.Black;

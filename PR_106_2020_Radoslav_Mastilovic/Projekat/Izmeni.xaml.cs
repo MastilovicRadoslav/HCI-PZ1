@@ -317,6 +317,23 @@ namespace Projekat
 			{
 				labelaGreskaDatum.Content = "";
 			}
+
+			if (RichTextBoxText.Text.Trim().Equals(""))
+			{
+				result = false;
+				RichTextBoxText.Text = "Obavezno polje!";
+				RichTextBoxText.Foreground = Brushes.Red;
+				RichTextBoxBarselona.BorderBrush = Brushes.Red;
+				RichTextBoxBarselona.BorderThickness = new Thickness(1);
+
+			}
+			else
+			{
+				RichTextBoxText.Foreground = Brushes.Black;
+				RichTextBoxBarselona.BorderBrush = Brushes.Gray;
+			}
+
+
 			return result;
 		}
 
