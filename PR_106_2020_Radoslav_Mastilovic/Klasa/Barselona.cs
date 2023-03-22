@@ -18,7 +18,6 @@ namespace Class
 		public Barselona()
 		{
 		}
-
 		public Barselona(int brojDresa, string nazivIgraca, DateTime datumPrelaska, string slika, string fajl)
 		{
 			this.brojDresa = brojDresa;
@@ -58,6 +57,5 @@ namespace Class
 			get { return fajl; }
 			set { fajl = value; }
 		}
-
 	}
 }
