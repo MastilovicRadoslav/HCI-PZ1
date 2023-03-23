@@ -27,7 +27,7 @@ namespace Projekat
 
 			textBoxNaziv.Text = barsa.nazivIgraca;
 			textBoxBroj.Text = "Broj dresa je: " + Convert.ToString(barsa.brojDresa);
-			textBoxDatum.Text = "Datum prelaska je: " + barsa.datumPrelaska.ToString("dd/MM/yyyy") + ".";
+			textBoxDatum.Text = "Datum je: " + barsa.datumPrelaska.ToString() + ".";
 
 			Uri uri = new Uri(barsa.Slika);
 			imageSlika.Source = new BitmapImage(uri);
@@ -45,7 +45,6 @@ namespace Projekat
 			}
 
 		}
-
 		private void buttonZatvori_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();

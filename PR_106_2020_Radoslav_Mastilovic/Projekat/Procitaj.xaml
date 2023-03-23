@@ -41,7 +41,7 @@
 
 
         <Grid Height="550" Width="906" Canvas.Left="-16">
-            <TextBox x:Name="textBoxNaziv" TextWrapping="Wrap"  BorderThickness="0" Canvas.Top="186" Canvas.Left="300" Background="#00000000" Margin="223,206,412,313" RenderTransformOrigin="0.498,-1.267" FontSize="20" />
+            <TextBox x:Name="textBoxNaziv" TextWrapping="Wrap"  BorderThickness="0" Canvas.Top="186" Canvas.Left="300" Background="#00000000" Margin="227,206,412,313" RenderTransformOrigin="0.498,-1.267" FontSize="20" />
             <Image x:Name="imageSlika" Canvas.Left="280" Canvas.Top="236" Margin="194,237,530,166" />
             <Button x:Name="buttonZatvori" 
                     Content="Zatvori" 
@@ -89,7 +89,8 @@
                          IsReadOnly="True" 
                          Canvas.Left="398" 
                          Canvas.Top="270" 
-                         Margin="375,237,248,166" >
+                         Margin="375,237,248,166"
+                         Height="147">
                 <FlowDocument>
                     <Paragraph>
                         <Run Name="RichTextBoxText" Foreground="Gray" FontSize="20"/>
@@ -97,8 +98,8 @@
                 </FlowDocument>
             </RichTextBox>
                          
-            <TextBox x:Name="textBoxDatum" Canvas.Left="280" BorderThickness="0" Canvas.Top="354" Height="30" Background="#00000000" Margin="220,398,404,122" FontSize="20"/>
-            <TextBox x:Name="textBoxBroj" TextWrapping="Wrap"  BorderThickness="0" Canvas.Top="230" Height="30" Canvas.Left="398" Background="#00000000" Margin="220,433,412,87" RenderTransformOrigin="0.483,5.333" FontSize="20"/>
+            <TextBox x:Name="textBoxDatum" Canvas.Left="280" BorderThickness="0" Canvas.Top="354" Height="30" Background="#00000000" Margin="225,403,215,117" FontSize="20" Width="500"/>
+            <TextBox x:Name="textBoxBroj" TextWrapping="Wrap"  BorderThickness="0" Canvas.Top="230" Height="30" Canvas.Left="398" Background="#00000000" Margin="225,433,412,87" RenderTransformOrigin="0.483,5.333" FontSize="20"/>
             <Rectangle Fill="#FF707070"  Margin="68,121,-47,0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="867" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
             <Rectangle Fill="#FF707070" Margin="100,485,0,0" Height="8" Canvas.Left="64" Stroke="Black" Canvas.Top="125" Width="789" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
 

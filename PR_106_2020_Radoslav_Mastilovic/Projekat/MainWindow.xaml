@@ -222,14 +222,14 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn  Header="Datum" Width="*" CanUserResize="False" FontSize="10" Binding="{Binding DatumPrelaska, StringFormat={}{0:dd/MM/yy}}"/>
+                    <DataGridTextColumn  Header="Datum" Width="*" CanUserResize="False" FontSize="10" Binding="{Binding DatumPrelaska}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <!--Naslov-->
-            <Label Content="La Masia" 
+            <Label Content="FK Barselona" 
                    FontWeight="Bold" 
                    HorizontalAlignment="Left" 
-                   Margin="338,70,0,0" 
+                   Margin="310,70,0,0" 
                    VerticalAlignment="Top" 
                    FontSize="50" 
                    FontStyle="Italic" 

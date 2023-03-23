@@ -169,10 +169,13 @@ namespace Projekat
 
 		#endregion
 
+
+		#region Za brisanje
 		private void cbBrisanje_MouseEnter(object sender, MouseEventArgs e)
 		{
 			cbOznacen = true;
 
 		}
+		#endregion
 	}
 }

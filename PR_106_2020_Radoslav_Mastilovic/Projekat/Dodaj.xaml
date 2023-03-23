@@ -212,10 +212,11 @@
                          Margin="378,312,217,160" 
                          BorderBrush="Black" 
                          GotFocus="RichTextBoxBarselona_GotFocus"
-                         LostFocus="RichTextBoxBarselona_LostFocus">
+                         LostFocus="RichTextBoxBarselona_LostFocus"
+                         Height="86">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Name="RichTextBoxText" Text="Unesite opis igrača" Foreground="Gray"/>
+                        <Run Name="RichTextBoxText" Text="Unesite opis igrača" Foreground="Gray" />
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>

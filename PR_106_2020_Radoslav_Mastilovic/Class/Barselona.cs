@@ -58,6 +58,5 @@ namespace Class
 			get { return fajl; }
 			set { fajl = value; }
 		}
-
 	}
 }
