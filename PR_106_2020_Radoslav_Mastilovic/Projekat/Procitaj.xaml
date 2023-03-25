@@ -15,7 +15,7 @@
 
         <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="690" Stretch="Fill" Width="970" RenderTransformOrigin="0.511,0.659" MouseLeftButtonDown="UIPath_MouseLeftButtonDown">
             <Path.Fill>
-                <ImageBrush ImageSource="/Slike/Pozadina1.jpg" Opacity="0.9"/>
+                <ImageBrush ImageSource="/Slike/Pozadina1.jpg" Opacity="1"/>
             </Path.Fill>
 
             <Path.Data>
@@ -136,7 +136,7 @@
                      RenderTransformOrigin="0.483,5.333" 
                      FontSize="20"/>
 
-            <Rectangle Fill="#FF707070"  Margin="68,121,-47,0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="867" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
+            <Rectangle Fill="#FF707070"  Margin="69,121,-47,0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="867" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
             <Rectangle Fill="#FF707070" Margin="100,485,0,0" Height="8" Canvas.Left="64" Stroke="Black" Canvas.Top="125" Width="789" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
 
         </Grid>
