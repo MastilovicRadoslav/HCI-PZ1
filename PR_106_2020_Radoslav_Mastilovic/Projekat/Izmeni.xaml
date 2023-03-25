@@ -214,11 +214,12 @@
                          TextChanged="RichTextBoxBarselona_TextChanged" 
                          Canvas.Left="384" 
                          Width="260" 
+                         Height="90"
                          Margin="378,312,217,160" 
                          BorderBrush="Black">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Name="RichTextBoxText" Foreground="Gray"/>
+                        <Run Name="RichTextBoxText" Foreground="Gray" FontSize="10"/>
                     </Paragraph>
                 </FlowDocument>
                 

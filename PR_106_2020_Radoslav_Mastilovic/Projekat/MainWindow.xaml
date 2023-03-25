@@ -11,9 +11,10 @@
         AllowsTransparency="True"
         Background="Transparent"
         d:DesignHeight="483.469"
-        Closing="Window_Closing">
+        Closing="Window_Closing"
+        MouseDown="Window_MouseDown">
 
-    <Canvas Width="1300" Height="800" RenderTransformOrigin="-0.217,0.673" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Canvas Width="1300" Height="800" RenderTransformOrigin="-0.217,0.673">
         <!--Oblik Barselona grba-->
         <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="737" Stretch="Fill" Width="917" RenderTransformOrigin="0.511,0.659">
             <Path.Fill>

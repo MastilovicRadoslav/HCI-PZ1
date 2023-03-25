@@ -266,8 +266,8 @@ namespace Projekat
 			else
 			{
 
-				bool isNumeric = int.TryParse(textBoxBroj.Text, out _);
-				if (isNumeric)
+				bool broj = int.TryParse(textBoxBroj.Text, out _);
+				if (broj)
 				{
 					if (Int32.Parse(textBoxBroj.Text) >= 0)
 					{
@@ -320,7 +320,6 @@ namespace Projekat
 
 			if (RichTextBoxText.Text.Trim().Equals(""))
 			{
-				result = false;
 				RichTextBoxText.Text = "Obavezno polje!";
 				RichTextBoxText.Foreground = Brushes.Red;
 				RichTextBoxBarselona.BorderBrush = Brushes.Red;

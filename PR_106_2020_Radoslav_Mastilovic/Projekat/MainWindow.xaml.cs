@@ -81,14 +81,6 @@ namespace Projekat
 		#endregion
 
 
-		#region Manipulisanje prozorom
-		private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-		{
-			this.DragMove();
-		}
-		#endregion
-
-
 		#region Dugme obrisi
 		private void buttonObrisi_Click(object sender, RoutedEventArgs e)
 		{
@@ -174,6 +166,18 @@ namespace Projekat
 		private void cbBrisanje_MouseEnter(object sender, MouseEventArgs e)
 		{
 			cbOznacen = true;
+
+		}
+		#endregion
+
+		#region Manipulisanje prozorom
+
+		private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			if (e.LeftButton == MouseButtonState.Pressed)
+			{
+				DragMove();
+			}
 
 		}
 		#endregion

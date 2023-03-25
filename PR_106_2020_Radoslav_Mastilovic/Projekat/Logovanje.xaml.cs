@@ -45,7 +45,7 @@ namespace Projekat
 				{
 
 
-					//MessageBox.Show("Dobrodošli na stranicu FK Barselona kao Admin.", "Obavještenje!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.Yes);
+					MessageBox.Show("Dobrodošli na stranicu FK Barselona kao Admin.", "Obavještenje!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.Yes);
 					ime = "admin";
 					sifra = "admin123";
 					MainWindow window = new MainWindow();
@@ -56,7 +56,7 @@ namespace Projekat
 				else if (textBoxIme.Text.Trim().Equals("posjetioc") && passwordBoxSifra.Password.Equals("posjetioc123"))
 				{
 
-					//MessageBox.Show("Dobrodošli na stranicu FK Barselona kao Posjetilac.", "Obavještenje!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.Yes);
+					MessageBox.Show("Dobrodošli na stranicu FK Barselona kao Posjetilac.", "Obavještenje!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.Yes);
 					ime = "posjetioc";
 					sifra = "posjetioc123";
 					MainWindow window = new MainWindow();
@@ -69,46 +69,37 @@ namespace Projekat
 					window.buttonObrisi.Visibility = Visibility.Hidden;
 					window.buttonDodaj.Visibility = Visibility.Hidden;
 					window.ShowDialog();
+				}else if (textBoxIme.Text.Trim().Equals("admin") && !passwordBoxSifra.Password.Equals("admin123"))
+				{
+					passwordBoxSifra.Password = "";
+					labelSifraGreska.Content = "Pogresna sifra za admina";
+					passwordBoxSifra.BorderBrush = Brushes.Red;
+				}else if (!textBoxIme.Text.Trim().Equals("admin") && passwordBoxSifra.Password.Equals("admin123"))
+				{
+					textBoxIme.Text = "";
+					labelImeGreska.Content = "Pogresno ime za admina";
+					textBoxIme.BorderBrush = Brushes.Red;
+
+				}else if (textBoxIme.Text.Trim().Equals("posjetioc") && !passwordBoxSifra.Password.Equals("posjetioc123"))
+				{
+					passwordBoxSifra.Password = "";
+					labelSifraGreska.Content = "Pogresna sifra za posjetioca";
+					passwordBoxSifra.BorderBrush = Brushes.Red;
+				}else if (!textBoxIme.Text.Trim().Equals("posjetioc") && passwordBoxSifra.Password.Equals("posjetioc123"))
+				{
+					textBoxIme.Text = "";
+					labelImeGreska.Content = "Pogresno ime za posjetioca";
+					textBoxIme.BorderBrush = Brushes.Red;
+
 				}
 				else
-				{
-					if (textBoxIme.Text.Trim().Equals("admin") && !passwordBoxSifra.Password.Equals("admin123"))
-					{
-						passwordBoxSifra.Password = "";
-						labelSifraGreska.Content = "Pogresna sifra za admina";
-						passwordBoxSifra.BorderBrush = Brushes.Red;
-					}
-					else if (!textBoxIme.Text.Trim().Equals("admin") && passwordBoxSifra.Password.Equals("admin123"))
-					{
-						textBoxIme.Text = "";
-						labelImeGreska.Content = "Pogresno ime za admina";
-						textBoxIme.BorderBrush = Brushes.Red;
-					}
-					if (textBoxIme.Text.Trim().Equals("posjetioc") && !passwordBoxSifra.Password.Equals("posjetioc123"))
-					{
-						passwordBoxSifra.Password = "";
-						labelSifraGreska.Content = "Pogresna sifra za posjetioca";
-						passwordBoxSifra.BorderBrush = Brushes.Red;
-
-
-					}
-					else if (!textBoxIme.Text.Trim().Equals("posjetioc") && passwordBoxSifra.Password.Equals("posjetioc123"))
-					{
-						textBoxIme.Text = "";
-						labelImeGreska.Content = "Pogresno ime za posjetioca";
-						textBoxIme.BorderBrush = Brushes.Red;
-
-					}
-					if (!textBoxIme.Text.Trim().Equals("admin") && !passwordBoxSifra.Password.Equals("admin123") || !textBoxIme.Text.Trim().Equals("posjetioc") && !passwordBoxSifra.Password.Equals("posjetioc123"))
-					{
-						passwordBoxSifra.Password = "";
-						labelSifraGreska.Content = "Pogresna sifra";
-						passwordBoxSifra.BorderBrush = Brushes.Red;
-						textBoxIme.Text = "";
-						labelImeGreska.Content = "Pogresno ime";
-						textBoxIme.BorderBrush = Brushes.Red;
-
-					}
+				{					
+					passwordBoxSifra.Password = "";
+					labelSifraGreska.Content = "Pogresna sifra";
+					passwordBoxSifra.BorderBrush = Brushes.Red;
+					textBoxIme.Text = "";
+					labelImeGreska.Content = "Pogresno ime";
+					textBoxIme.BorderBrush = Brushes.Red;				
 				}
 			}
 		}
@@ -170,6 +161,34 @@ namespace Projekat
 				textBoxIme.Text = "unesite ime";
 				textBoxIme.Foreground = Brushes.LightGray;
 
+			}
+		}
+		#endregion
+
+		#region PasswordBoxSifra
+		private void passwordBoxSifra_GotFocus(object sender, RoutedEventArgs e)
+		{
+			if (passwordBoxSifra.Password.Trim().Equals(String.Empty))
+			{
+				passwordBoxSifra.Password = "";
+				passwordBoxSifra.Foreground = Brushes.LightGray;
+			}
+			labelSifraGreska.Content = "";
+			passwordBoxSifra.Foreground = Brushes.LightGray;
+
+		}
+
+		private void passwordBoxSifra_LostFocus(object sender, RoutedEventArgs e)
+		{
+			if (passwordBoxSifra.Password.Trim().Equals(string.Empty))
+			{
+				passwordBoxSifra.Password = "";
+				passwordBoxSifra.Foreground = Brushes.LightGray;
+			}
+			if (!passwordBoxSifra.Password.Trim().Equals(string.Empty))
+			{
+				labelSifraGreska.Content = "";
+				passwordBoxSifra.Foreground = Brushes.LightGray;
 			}
 		}
 		#endregion

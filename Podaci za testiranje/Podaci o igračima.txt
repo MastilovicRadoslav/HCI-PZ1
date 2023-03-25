@@ -7,7 +7,7 @@ Opis:
 Puno ime: Jordi Alba Ramos
 Datum rođenja: 21. marta 1989. (34 godine)
 Mjesto rođenja:	L'Hospitalet de Llobregat , Španija
-Visina:	1,70 m (5 ft 7 in) [3]
+Visina:	1,70 m 
 pozicija:	Lijevi bek
 
 
@@ -112,7 +112,7 @@ Opis:
 Puno ime: Lionel Andrés Messi
 Datum rođenja: 24. juna 1987. (35 godina)
 Mjesto rođenja: Rosario, Santa Fe , Argentina
-Visina: 1,70 m (5 ft 7 in) 
+Visina: 1,70 m
 Pozicija: Naprijed
 
 Pike:
@@ -162,9 +162,8 @@ Pozicija: Golman
 
 Xavi:
 Sika: --
-Broj dresa: 
-
-Opis: 6
+Broj dresa: 6
+Opis: 
 
 Puno ime: Xavier Hernández Creus
 Datum rođenja: 25. januara 1980. (43 godine) 
