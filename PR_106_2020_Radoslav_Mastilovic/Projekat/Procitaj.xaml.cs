@@ -22,6 +22,7 @@ namespace Projekat
 	{
 		public Procitaj(int index)
 		{
+			#region Ime, Broj dresa, Datum, Sika
 			Barselona barsa = MainWindow.Barsa[index];
 			InitializeComponent();
 
@@ -43,17 +44,22 @@ namespace Projekat
 					textRange.Load(fileStream, System.Windows.DataFormats.Rtf);
 				}
 			}
+			#endregion
 
 		}
+
+		#region Dugme dodaj
 		private void buttonZatvori_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();
 		}
+		#endregion
 
+		#region Pomjeranje prozora
 		private void UIPath_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
 			this.DragMove();
-
 		}
+		#endregion
 	}
 }

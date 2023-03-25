@@ -415,11 +415,14 @@ namespace Projekat
 		}
 		#endregion
 
+		#region Pomjeranje prozora
+
 		private void UIPath_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
 			this.DragMove();
 		}
 
+		#endregion
 
 	}
 }

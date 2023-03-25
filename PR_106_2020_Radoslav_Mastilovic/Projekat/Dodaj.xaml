@@ -38,6 +38,7 @@
             </Path.Data>
         </Path>
 
+        <!--Dugme dodaj-->
         <Grid>
             <Button x:Name="buttonDodaj" 
                     Content="Dodaj"
@@ -82,7 +83,7 @@
                 </Button.Template>
             </Button>
 
-
+            <!--Dugme Izadji-->
             <Button x:Name="buttonIzađi" 
                     Content="Izađi" 
                     HorizontalAlignment="Left" 
@@ -126,7 +127,8 @@
                 </Button.Template>
 
             </Button>
-
+            
+            <!--Dugme za dodavanje slike-->
             <Button x:Name="buttonBrowse" 
                     Content="Browse" 
                     Click="buttonBrowse_Click" 
@@ -170,7 +172,7 @@
 
 
 
-
+            <!--Potrebne labele-->
             <Label x:Name="labelaNaziv" Content="Naziv Igrača" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="186" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" Margin="193,151,0,362" />
             <Label x:Name="labelaBroj" Content="Broj dresa " FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="230" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" Margin="193,218,0,295"/>
             <Label x:Name="labelaOpis" Content="Opis igrača" FontSize="16" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="276" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" Margin="193,289,0,229" RenderTransformOrigin="0.5,-0.05"/>
@@ -178,7 +180,7 @@
             <TextBox x:Name="textBoxNaziv" TextWrapping="Wrap" BorderBrush="Black" BorderThickness="1" Width="260" Canvas.Top="186" Canvas.Left="370" LostFocus="textBoxNaziv_LostFocus" GotFocus="textBoxNaziv_GotFocus" Margin="383,156,222,367" />
             <TextBox x:Name="textBoxBroj" TextWrapping="Wrap" BorderBrush="Black" BorderThickness="1" Width="260" Canvas.Top="230" Canvas.Left="370" LostFocus="textBoxBroj_LostFocus"  GotFocus="textBoxBroj_GotFocus" Margin="383,223,222,301" />
 
-
+            <!--DockPanel za uljepsavanje teksta-->
             <DockPanel >
                 <ToolBar BorderThickness="1" BorderBrush="Black" Width="275" Height="24" Canvas.Left="370" Margin="170,45,0,0">
                     <ToggleButton Command="EditingCommands.ToggleItalic" x:Name="tglButtonItalic" >
@@ -204,6 +206,7 @@
 
                 </ToolBar>
             </DockPanel>
+            <!--Opis igraca RichTextBox-->
             <RichTextBox x:Name="RichTextBoxBarselona" 
                          SelectionChanged="RichTextBoxBarselona_SelectionChanged" 
                          TextChanged="RichTextBoxBarselona_TextChanged" 
@@ -224,6 +227,7 @@
 
         </Grid>
 
+        <!--Potrebni TextBox-evi-->
         <TextBox x:Name="textBoxSlika" IsReadOnly="True" Canvas.Left="384" Canvas.Top="407" Width="121" Height="63" Text="Slika" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Image Margin="20 0 0 0" x:Name="imageSlika" Width="122" Height="62" Canvas.Left="397" Canvas.Top="408" RenderTransformOrigin="0.25,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" />
         <DatePicker Name="datePickerDatum" FontSize="15" Canvas.Left="511" Canvas.Top="407" HorizontalAlignment="Left" VerticalAlignment="Top" Width="132" MouseEnter="datePickerDatum_MouseEnter"/>

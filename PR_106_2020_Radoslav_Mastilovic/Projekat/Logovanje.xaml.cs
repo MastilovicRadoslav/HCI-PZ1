@@ -19,18 +19,24 @@ namespace Projekat
 	/// </summary>
 	public partial class Logovanje : Window
 	{
+		#region Pomocna polja
 		public static string ime;
 		public static string sifra;
+		#endregion
+
 		public Logovanje()
 		{
+			#region Početne vrijednosti
 			InitializeComponent();
 			textBoxIme.Text = "unesite ime";
 			textBoxIme.Foreground = Brushes.LightSlateGray;
 			//passwordBoxSifra.Password = "unesite šifru";
 			//passwordBoxSifra.Foreground= Brushes.LightSlateGray;
 			//passwordBoxSifra.Visibility = Visibility.Visible;
+			#endregion
 		}
 
+		#region Dugme za prijavu
 		private void btnPrijava_Click(object sender, RoutedEventArgs e)
 		{
 			if (Validate())
@@ -106,7 +112,9 @@ namespace Projekat
 				}
 			}
 		}
+		#endregion
 
+		#region Validacija unosa
 		private bool Validate()
 		{
 			bool result = true;
@@ -141,7 +149,9 @@ namespace Projekat
 			}
 			return result;
 		}
+		#endregion
 
+		#region TextBoxIme
 		private void textBoxIme_GotFocus(object sender, RoutedEventArgs e)
 		{
 			if (textBoxIme.Text.Trim().Equals("unesite ime"))
@@ -162,60 +172,41 @@ namespace Projekat
 
 			}
 		}
+		#endregion
 
-		private void passwordBoxSifra_GotFocus(object sender, RoutedEventArgs e)
-		{
-			if (passwordBoxSifra.Password.Trim().Equals(String.Empty))
-			{
-				passwordBoxSifra.Password = "";
-				passwordBoxSifra.Foreground = Brushes.LightGray;
-			}
-			labelSifraGreska.Content = "";
-			passwordBoxSifra.Foreground = Brushes.LightGray;
 
-		}
 
-		private void passwordBoxSifra_LostFocus(object sender, RoutedEventArgs e)
-		{
-			if (passwordBoxSifra.Password.Trim().Equals(string.Empty))
-			{
-				passwordBoxSifra.Password = "";
-				passwordBoxSifra.Foreground = Brushes.LightGray;
-			}
-			if (!passwordBoxSifra.Password.Trim().Equals(string.Empty))
-			{
-				labelSifraGreska.Content = "";
-				passwordBoxSifra.Foreground = Brushes.LightGray;
-			}
-
-		}
-
+		#region Pomjeranje prozora
 		private void Window_MouseDown(object sender, MouseButtonEventArgs e)
 		{
 			if (e.LeftButton == MouseButtonState.Pressed)
 			{
 				DragMove();
 			}
-
 		}
+		#endregion
 
+		#region Minimizacija prozora
 		private void btnMinimize_Click(object sender, RoutedEventArgs e)
 		{
 			WindowState = WindowState.Minimized;
 
 		}
+		#endregion
 
+		#region Izlazak iz prozora
 		private void btnClose_Click(object sender, RoutedEventArgs e)
 		{
 			Application.Current.Shutdown();
-
 		}
+		#endregion
 
+		#region Dugme za izlaz
 		private void btnIzlaz_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();
-
 		}
+		#endregion
 	}
 }
 

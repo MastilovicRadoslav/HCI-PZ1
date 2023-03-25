@@ -200,7 +200,7 @@ namespace Projekat
 		#endregion
 
 
-		#region Dugme za izmejnu igrača
+		#region Dugme za izmjenu igrača
 		private void buttonIzmeni_Click(object sender, RoutedEventArgs e)
 		{
 			if (validate())
@@ -339,9 +339,11 @@ namespace Projekat
 
 		#endregion
 
+		#region Datum
 		private void datePickerDatum_MouseEnter(object sender, MouseEventArgs e)
 		{
 			datePickerDatum.Text = DateTime.Now.ToString();
 		}
+		#endregion
 	}
 }
