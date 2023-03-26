@@ -303,21 +303,6 @@ namespace Projekat
 				}
 
 			}
-
-			if (DateTime.Now == null)
-			{
-				result = false;
-				labelaGreskaDatum.FontSize = 12;
-				labelaGreskaDatum.Content = "Obavezno!";
-				labelaGreskaDatum.Foreground = Brushes.Red;
-				labelaGreskaDatum.BorderBrush = Brushes.Red;
-				labelaGreskaDatum.BorderThickness = new Thickness(1);
-			}
-			else
-			{
-				labelaGreskaDatum.Content = "";
-			}
-
 			if (RichTextBoxText.Text.Trim().Equals(""))
 			{
 				RichTextBoxText.Text = "Obavezno polje!";
@@ -342,6 +327,7 @@ namespace Projekat
 		private void datePickerDatum_MouseEnter(object sender, MouseEventArgs e)
 		{
 			datePickerDatum.Text = DateTime.Now.ToString();
+			datePickerDatum.IsEnabled = false;
 		}
 		#endregion
 	}

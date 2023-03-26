@@ -127,7 +127,7 @@
                 </Button.Template>
 
             </Button>
-            
+
             <!--Dugme za dodavanje slike-->
             <Button x:Name="buttonBrowse" 
                     Content="Browse" 
@@ -138,7 +138,7 @@
                     FontFamily="Montserrat"
                     Cursor="Hand" 
                     Width="100"
-                    Margin="193,425,572,94" RenderTransformOrigin="0.485,-0.349">
+                    Margin="193,438,572,81" RenderTransformOrigin="0.485,-0.349">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -175,37 +175,34 @@
             <!--Potrebne labele-->
             <Label x:Name="labelaNaziv" Content="Naziv Igrača" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="186" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" Margin="193,151,0,362" />
             <Label x:Name="labelaBroj" Content="Broj dresa " FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="230" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" Margin="193,218,0,295"/>
-            <Label x:Name="labelaOpis" Content="Opis igrača" FontSize="16" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="276" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" Margin="193,289,0,229" RenderTransformOrigin="0.5,-0.05"/>
-            <Label x:Name="labelaSlika" Content="Unesite sliku"  FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="358" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" RenderTransformOrigin="0.5,1.763" Margin="193,363,0,160"/>
+            <Label x:Name="labelaOpis" Content="Opis igrača" FontSize="16" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="276" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" Margin="193,289,0,229" />
+            <Label x:Name="labelaSlika" Content="Unesite sliku"  FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="358" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2"  Margin="193,398,0,125"/>
             <TextBox x:Name="textBoxNaziv" TextWrapping="Wrap" BorderBrush="Black" BorderThickness="1" Width="260" Canvas.Top="186" Canvas.Left="370" LostFocus="textBoxNaziv_LostFocus" GotFocus="textBoxNaziv_GotFocus" Margin="383,156,222,367" />
             <TextBox x:Name="textBoxBroj" TextWrapping="Wrap" BorderBrush="Black" BorderThickness="1" Width="260" Canvas.Top="230" Canvas.Left="370" LostFocus="textBoxBroj_LostFocus"  GotFocus="textBoxBroj_GotFocus" Margin="383,223,222,301" />
 
             <!--DockPanel za uljepsavanje teksta-->
             <DockPanel >
-                <ToolBar BorderThickness="1" BorderBrush="Black" Width="275" Height="24" Canvas.Left="370" Margin="170,45,0,0">
-                    <ToggleButton Command="EditingCommands.ToggleItalic" x:Name="tglButtonItalic" >
+                <ToolBar BorderThickness="1" BorderBrush="Black" Width="275" Height="26" Canvas.Left="370" Margin="170,45,0,0">
+                    <ToggleButton Command="EditingCommands.ToggleItalic" x:Name="tglButtonItalic" Width="20">
                         <Image Source="/Slike/Italic.png"/>
                     </ToggleButton>
-                    <ToggleButton Command="EditingCommands.ToggleBold" x:Name="tglButtonBold" >
+                    <ToggleButton Command="EditingCommands.ToggleBold" x:Name="tglButtonBold" Width="20">
                         <Image Source="/Slike/Bold.png"/>
                     </ToggleButton>
-                    <ToggleButton Command="EditingCommands.ToggleUnderline" x:Name="tglButtonUnderline" BorderBrush="Black" >
+                    <ToggleButton Command="EditingCommands.ToggleUnderline" x:Name="tglButtonUnderline" BorderBrush="Black" Width="20">
                         <Image Source="/Slike/Underline.png"/>
                     </ToggleButton>
                     <Separator/>
 
-                    <ComboBox x:Name="ComboBoxFamily" Width="42" SelectionChanged="ComboBoxFamily_SelectionChanged"/>
-                    <ComboBox x:Name="ComboBoxSize" Width="42" SelectionChanged="ComboBoxSize_SelectionChanged"/>
-                    <ComboBox x:Name="ComboBoxColor" Width="42" SelectionChanged="ComboBoxColor_SelectionChanged"/>
-
-                    <Separator/>
-
-                    <StatusBar BorderThickness="2" BorderBrush="Black"  Width="50" HorizontalAlignment="Right" Height="17" >
-                        <TextBlock x:Name="TextBlockBrojReci" Width="46" Height="12" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" />
-                    </StatusBar>
-
+                    <ComboBox x:Name="ComboBoxFamily" Width="78" SelectionChanged="ComboBoxFamily_SelectionChanged"/>
+                    <ComboBox x:Name="ComboBoxSize" Width="50" SelectionChanged="ComboBoxSize_SelectionChanged"/>
+                    <ComboBox x:Name="ComboBoxColor" Width="50" SelectionChanged="ComboBoxColor_SelectionChanged"/>
                 </ToolBar>
             </DockPanel>
+
+            <StatusBar BorderThickness="2" BorderBrush="Black"  Width="40"  Height="18" Margin="343,380,482,160">
+                <TextBlock x:Name="TextBlockBrojReci" Width="36" Height="12" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" Background="AliceBlue"/>
+            </StatusBar>
             <!--Opis igraca RichTextBox-->
             <RichTextBox x:Name="RichTextBoxBarselona" 
                          SelectionChanged="RichTextBoxBarselona_SelectionChanged" 
@@ -228,15 +225,14 @@
         </Grid>
 
         <!--Potrebni TextBox-evi-->
-        <TextBox x:Name="textBoxSlika" IsReadOnly="True" Canvas.Left="384" Canvas.Top="407" Width="121" Height="63" Text="Slika" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="textBoxSlika" IsReadOnly="True" Canvas.Left="384" Canvas.Top="407" Width="121" Height="63" Text="Slika" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0"/>
         <Image Margin="-13.5 0 0 0" x:Name="imageSlika" Width="122" Height="62" Canvas.Left="397" Canvas.Top="408" RenderTransformOrigin="0.25,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" />
         <DatePicker Name="datePickerDatum" FontSize="15" Canvas.Left="511" Canvas.Top="407" HorizontalAlignment="Left" VerticalAlignment="Top" Width="132" MouseEnter="datePickerDatum_MouseEnter"/>
-        <TextBox x:Name="textBoxGreskaNaziv" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap" Text="" Width="250" VerticalContentAlignment="Center" Canvas.Left="386" Canvas.Top="194" Background="#00000000" BorderThickness="0"  Height="20"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <TextBox x:Name="textBoxGreskaBroj" IsReadOnly="True" TextAlignment="Center"  TextWrapping="Wrap" Text="" Width="250" VerticalContentAlignment="Center" Canvas.Left="384" Canvas.Top="263" Background="#00000000" BorderThickness="0" Height="20" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" />
-        <Border x:Name="borderSlika" Height="62" Width="119" Canvas.Left="386" Canvas.Top="407" HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <Label Name="labelaGreskaSlika" Content=""  Width="80" Height="25" Margin="431,61,-420,-46"/>
+        <TextBox x:Name="textBoxGreskaNaziv" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap" Text="" Width="259" VerticalContentAlignment="Center" Canvas.Left="384" Canvas.Top="196" Background="#00000000" BorderThickness="0"  Height="20"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxGreskaBroj" IsReadOnly="True" TextAlignment="Center"  TextWrapping="Wrap" Text="" Width="268" VerticalContentAlignment="Center" Canvas.Left="384" Canvas.Top="263" Background="#00000000" BorderThickness="0" Height="20" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Border x:Name="borderSlika" Height="62" Width="119" Canvas.Left="386" Canvas.Top="407" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-1.5 0.5 0 0">
+            <Label Name="labelaGreskaSlika" Content="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
-        <Label Name="labelaGreskaDatum" Content="" Width="132" Canvas.Left="511" Canvas.Top="440" Height="32" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Rectangle Fill="#FF707070"  Margin="-2 8 0 0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="790" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
         <Rectangle Fill="#FF707070" Margin="-10 -5 0 0" Height="8" Canvas.Left="64" Stroke="Black" Canvas.Top="125" Width="865" HorizontalAlignment="Left" VerticalAlignment="Center" RadiusX="3.5" RadiusY="3.5"/>
 

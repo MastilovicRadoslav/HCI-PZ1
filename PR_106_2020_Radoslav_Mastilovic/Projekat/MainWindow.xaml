@@ -230,12 +230,13 @@
             <Label Content="FK Barselona" 
                    FontWeight="Bold" 
                    HorizontalAlignment="Left" 
-                   Margin="310,70,0,0" 
+                   Margin="54,70,0,0" 
                    VerticalAlignment="Top" 
                    FontSize="50" 
                    FontStyle="Italic" 
-                   Background="#00000000" 
-                   Foreground="SkyBlue"
+                   Background="Transparent" 
+                   Foreground="SkyBlue" Width="790"
+                   HorizontalContentAlignment="Center"
                    />
         </Grid>
     </Canvas>

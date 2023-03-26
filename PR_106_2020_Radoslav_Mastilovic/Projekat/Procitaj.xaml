@@ -15,7 +15,7 @@
 
         <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="690" Stretch="Fill" Width="970" RenderTransformOrigin="0.511,0.659" MouseLeftButtonDown="UIPath_MouseLeftButtonDown">
             <Path.Fill>
-                <ImageBrush ImageSource="/Slike/Pozadina1.jpg" Opacity="1"/>
+                <ImageBrush ImageSource="/Slike/Pozadina1.jpg" Opacity="0.9"/>
             </Path.Fill>
 
             <Path.Data>
@@ -48,7 +48,7 @@
                      Canvas.Top="186" 
                      Canvas.Left="300" 
                      Background="#00000000" 
-                     Margin="194,206,412,313" 
+                     Margin="194,206,445,313" 
                      RenderTransformOrigin="0.498,-1.267" 
                      FontSize="20" 
                      Width="267"/>
@@ -106,9 +106,9 @@
                          IsReadOnly="True" 
                          Canvas.Left="398" 
                          Canvas.Top="270" 
-                         Margin="400,237,215,166"
-                         Height="147"
-                         Width="291">
+                         Margin="400,237,215,163"
+                         Width="291"
+                         Height="150">
                 <FlowDocument>
                     <Paragraph>
                         <Run Name="RichTextBoxText" Foreground="Gray" FontSize="15"/>
@@ -138,7 +138,20 @@
 
             <Rectangle Fill="#FF707070"  Margin="69,121,-47,0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="867" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
             <Rectangle Fill="#FF707070" Margin="100,485,0,0" Height="8" Canvas.Left="64" Stroke="Black" Canvas.Top="125" Width="789" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
-
         </Grid>
+        <Label     Content="PODACI O IGRAČU" 
+                   FontSize="45" 
+                   FontWeight="Bold"
+                   Foreground="SkyBlue" 
+                   VerticalContentAlignment="Center" 
+                   HorizontalContentAlignment="Center" 
+                   HorizontalAlignment="Left" 
+                   Margin="244,130,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="500"
+                   Height="70"
+                   Background="AliceBlue">
+
+        </Label>
     </Canvas>
 </Window>

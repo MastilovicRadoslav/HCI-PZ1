@@ -167,10 +167,10 @@ namespace Projekat
 				result = false;
 				borderSlika.BorderBrush = Brushes.Red;
 				borderSlika.BorderThickness = new Thickness(1);
-				labelaGreskaSlika.Content = "Obavezno!";
-				labelaGreskaSlika.Background = Brushes.LightGray;
+				labelaGreskaSlika.Content = "Slika obavezna!";
 				labelaGreskaSlika.Foreground = Brushes.Red;
 				labelaGreskaSlika.BorderThickness = new Thickness(1);
+				textBoxSlika.Text = "";
 
 
 
@@ -179,29 +179,30 @@ namespace Projekat
 			{
 				borderSlika.BorderBrush = Brushes.Green;
 				borderSlika.BorderThickness = new Thickness(0);
-				labelaGreskaSlika.Content = "";
 				labelaGreskaSlika.BorderThickness = new Thickness(0);
+				labelaGreskaSlika.Content = "";
 				textBoxSlika.Text = "";
 			}
+
+
 			#endregion
 
-			#region Datum 
-			if (DateTime.Now == null)
-			{
-				result = false;
-				labelaGreskaDatum.FontSize = 12;
-				labelaGreskaDatum.Content = "Obavezno polje!";
-				labelaGreskaDatum.Foreground = Brushes.Red;
-				labelaGreskaDatum.BorderBrush = Brushes.Red;
-				labelaGreskaDatum.BorderThickness = new Thickness(1);
+			//if (DateTime.Now == null)
+			//{
+			//	result = false;
+			//	labelaGreskaDatum.FontSize = 12;
+			//	labelaGreskaDatum.Content = "Obavezno polje!";
+			//	labelaGreskaDatum.Foreground = Brushes.Red;
+			//	labelaGreskaDatum.BorderBrush = Brushes.Red;
+			//	labelaGreskaDatum.BorderThickness = new Thickness(1);
 
-			}
-			else
-			{
-				labelaGreskaDatum.Content = "";
-				labelaGreskaDatum.BorderThickness = new Thickness(0);
+			//}
+			//else
+			//{
+			//	labelaGreskaDatum.Content = "";
+			//	labelaGreskaDatum.BorderThickness = new Thickness(0);
 
-			}
+			//}
 
 
 			#region RichTextBox
@@ -224,7 +225,6 @@ namespace Projekat
 			#endregion
 
 
-			#endregion
 			return result;
 		}
 		#endregion
@@ -302,12 +302,15 @@ namespace Projekat
 		private void datePickerDatum_MouseEnter(object sender, MouseEventArgs e)
 		{
 			datePickerDatum.Text = DateTime.Now.ToString();
+			datePickerDatum.IsEnabled = false;
 		}
 		#endregion
 
 		#region Dugme za dodavanje slike
 		private void buttonBrowse_Click(object sender, RoutedEventArgs e)
 		{
+			borderSlika.Visibility = Visibility.Hidden;
+			labelaGreskaSlika.Visibility= Visibility.Hidden;
 			textBoxSlika.Visibility = Visibility.Hidden;
 			textBoxSlika.Text = "";
 
