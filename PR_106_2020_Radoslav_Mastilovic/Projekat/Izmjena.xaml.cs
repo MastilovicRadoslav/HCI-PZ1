@@ -20,7 +20,7 @@ namespace Projekat
 	/// <summary>
 	/// Interaction logic for Izmeni.xaml
 	/// </summary>
-	public partial class Izmeni : Window
+	public partial class Izmjena : Window
 	{
 		#region Pomocna polja
 		private int index = 0;
@@ -29,7 +29,7 @@ namespace Projekat
 		private string slika_pomocna = "";
 		#endregion
 
-		public Izmeni(int idx)
+		public Izmjena(int idx)
 		{
 			InitializeComponent();
 
@@ -81,7 +81,7 @@ namespace Projekat
 		#endregion
 
 		#region	 Dugme za izlaz
-		private void buttonIzađi_Click(object sender, RoutedEventArgs e)
+		private void btnIzađi_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();
 		}
@@ -185,7 +185,7 @@ namespace Projekat
 		#endregion
 
 		#region Dugme za izmjenu slike
-		private void buttonBrowse_Click(object sender, RoutedEventArgs e)
+		private void btnBrowse_Click(object sender, RoutedEventArgs e)
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			textBoxSlika.Text = "";
@@ -201,7 +201,7 @@ namespace Projekat
 
 
 		#region Dugme za izmjenu igrača
-		private void buttonIzmeni_Click(object sender, RoutedEventArgs e)
+		private void btnIzmijeni_Click(object sender, RoutedEventArgs e)
 		{
 			if (validate())
 			{
@@ -324,10 +324,10 @@ namespace Projekat
 		#endregion
 
 		#region Datum
-		private void datePickerDatum_MouseEnter(object sender, MouseEventArgs e)
+		private void trenutniDatum_MouseEnter(object sender, MouseEventArgs e)
 		{
-			datePickerDatum.Text = DateTime.Now.ToString();
-			datePickerDatum.IsEnabled = false;
+			trenutniDatum.Text = DateTime.Now.ToString();
+			trenutniDatum.IsEnabled = false;
 		}
 		#endregion
 	}

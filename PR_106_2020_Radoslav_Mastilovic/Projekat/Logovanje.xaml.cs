@@ -30,9 +30,6 @@ namespace Projekat
 			InitializeComponent();
 			textBoxIme.Text = "unesite ime";
 			textBoxIme.Foreground = Brushes.LightSlateGray;
-			//passwordBoxSifra.Password = "unesite šifru";
-			//passwordBoxSifra.Foreground= Brushes.LightSlateGray;
-			//passwordBoxSifra.Visibility = Visibility.Visible;
 			#endregion
 		}
 
@@ -66,9 +63,10 @@ namespace Projekat
 					window.dataGridBarselona.CanUserResizeColumns = false;
 					window.dataGridBarselona.CanUserResizeRows = false;
 					window.dataGridBarselona.CanUserSortColumns = false;
-					window.buttonObrisi.Visibility = Visibility.Hidden;
-					window.buttonDodaj.Visibility = Visibility.Hidden;
+					window.btnObrisi.Visibility = Visibility.Hidden;
+					window.btnDodaj.Visibility = Visibility.Hidden;
 					window.ShowDialog();
+
 				}else if (textBoxIme.Text.Trim().Equals("admin") && !passwordBoxSifra.Password.Equals("admin123"))
 				{
 					passwordBoxSifra.Password = "";

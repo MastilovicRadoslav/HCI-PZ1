@@ -13,10 +13,9 @@
         d:DesignHeight="483.469"
         Closing="Window_Closing"
         MouseDown="Window_MouseDown">
-
-    <Canvas Width="1300" Height="800" RenderTransformOrigin="-0.217,0.673">
+    <Canvas Width="1300" Height="800">
         <!--Oblik Barselona grba-->
-        <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="737" Stretch="Fill" Width="917" RenderTransformOrigin="0.511,0.659">
+        <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" Height="737" Stretch="Fill" Width="917">
             <Path.Fill>
                 <ImageBrush ImageSource="/Slike/Pozadina.jpg" Opacity="0.9"/>
             </Path.Fill>
@@ -43,9 +42,9 @@
 
         <Grid Canvas.Left="10" Canvas.Top="10">
             <!--Dodaj-->
-            <Button x:Name="buttonDodaj" 
+            <Button x:Name="btnDodaj" 
                     Content="Dodaj igrača"  
-                    Click="buttonDodaj_Click" 
+                    Click="btnDodaj_Click" 
                     Canvas.Left="102" 
                     Canvas.Top="473" 
                     FontSize="25"
@@ -86,9 +85,9 @@
 
             </Button>
             <!--Zatvori-->
-            <Button x:Name="buttonZatvori" 
+            <Button x:Name="btnZatvori" 
                     Content="Zatvori prozor" 
-                    Click="buttonZatvori_Click" 
+                    Click="btnZatvori_Click" 
                     Canvas.Left="606" 
                     Canvas.Top="473" 
                     FontSize="25"
@@ -127,9 +126,9 @@
                 </Button.Template>
             </Button>
             <!--Obrisi-->
-            <Button x:Name="buttonObrisi" 
+            <Button x:Name="btnObrisi" 
                     Content="Obriši" 
-                    Click="buttonObrisi_Click" 
+                    Click="btnObrisi_Click" 
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Top" 
                     Canvas.Left="606" 
@@ -185,7 +184,6 @@
                       Canvas.Top="148"
                       CanUserResizeColumns="False"
                       CanUserReorderColumns="False"
-                      RenderTransformOrigin="0.502,0.442"
                       Margin="54,148,0,117"
                       HorizontalAlignment="Left"
                       Background="SkyBlue" 

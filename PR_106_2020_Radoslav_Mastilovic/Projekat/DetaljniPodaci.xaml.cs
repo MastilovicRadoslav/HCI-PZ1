@@ -18,9 +18,9 @@ namespace Projekat
 	/// <summary>
 	/// Interaction logic for Procitaj.xaml
 	/// </summary>
-	public partial class Procitaj : Window
+	public partial class DetaljniPodaci : Window
 	{
-		public Procitaj(int index)
+		public DetaljniPodaci(int index)
 		{
 			#region Ime, Broj dresa, Datum, Sika
 			Barselona barsa = MainWindow.Barsa[index];
@@ -31,7 +31,7 @@ namespace Projekat
 			textBoxDatum.Text = "Datum je: " + barsa.datumPrelaska.ToString() + ".";
 
 			Uri uri = new Uri(barsa.Slika);
-			imageSlika.Source = new BitmapImage(uri);
+			imgSlika.Source = new BitmapImage(uri);
 
 			TextRange textRange;
 			System.IO.FileStream fileStream;
@@ -49,7 +49,7 @@ namespace Projekat
 		}
 
 		#region Dugme dodaj
-		private void buttonZatvori_Click(object sender, RoutedEventArgs e)
+		private void btnZatvori_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();
 		}

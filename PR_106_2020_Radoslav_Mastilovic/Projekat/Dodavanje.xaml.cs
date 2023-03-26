@@ -20,10 +20,10 @@ namespace Projekat
 	/// <summary>
 	/// Interaction logic for Dodaj.xaml
 	/// </summary>
-	public partial class Dodaj : Window
+	public partial class Dodavanje : Window
 	{
 		private string slika = "";
-		public Dodaj()
+		public Dodavanje()
 		{
 			#region Podešavanje početnih vrijednosti
 			InitializeComponent();
@@ -45,18 +45,18 @@ namespace Projekat
 
 
 		#region Dugme za izlaz
-		private void buttonIzađi_Click(object sender, RoutedEventArgs e)
+		private void btnIzađi_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();
 		}
 		#endregion
 
 		#region Dugme za dodavanje igraca
-		private void buttonDodaj_Click(object sender, RoutedEventArgs e)
+		private void btnDodaj_Click(object sender, RoutedEventArgs e)
 		{
 			if (validate())
 			{
-				if (buttonDodaj.Content.Equals("Dodaj"))
+				if (btnDodaj.Content.Equals("Dodaj"))
 				{
 					string naziv = "";
 					naziv = textBoxNaziv.Text + ".rtf";
@@ -187,24 +187,6 @@ namespace Projekat
 
 			#endregion
 
-			//if (DateTime.Now == null)
-			//{
-			//	result = false;
-			//	labelaGreskaDatum.FontSize = 12;
-			//	labelaGreskaDatum.Content = "Obavezno polje!";
-			//	labelaGreskaDatum.Foreground = Brushes.Red;
-			//	labelaGreskaDatum.BorderBrush = Brushes.Red;
-			//	labelaGreskaDatum.BorderThickness = new Thickness(1);
-
-			//}
-			//else
-			//{
-			//	labelaGreskaDatum.Content = "";
-			//	labelaGreskaDatum.BorderThickness = new Thickness(0);
-
-			//}
-
-
 			#region RichTextBox
 			if (RichTextBoxText.Text.Trim().Equals("Unesite opis igrača") || RichTextBoxText.Text.Trim().Equals(""))
 			{
@@ -299,15 +281,15 @@ namespace Projekat
 		#endregion
 
 		#region Datum
-		private void datePickerDatum_MouseEnter(object sender, MouseEventArgs e)
+		private void trenutniDatum_MouseEnter(object sender, MouseEventArgs e)
 		{
-			datePickerDatum.Text = DateTime.Now.ToString();
-			datePickerDatum.IsEnabled = false;
+			trenutniDatum.Text = DateTime.Now.ToString();
+			trenutniDatum.IsEnabled = false;
 		}
 		#endregion
 
 		#region Dugme za dodavanje slike
-		private void buttonBrowse_Click(object sender, RoutedEventArgs e)
+		private void btnBrowse_Click(object sender, RoutedEventArgs e)
 		{
 			borderSlika.Visibility = Visibility.Hidden;
 			labelaGreskaSlika.Visibility= Visibility.Hidden;

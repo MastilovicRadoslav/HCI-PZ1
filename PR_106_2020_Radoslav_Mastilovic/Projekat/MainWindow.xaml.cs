@@ -55,15 +55,15 @@ namespace Projekat
 
 		#region Dugme dodaj
 
-		private void buttonDodaj_Click(object sender, RoutedEventArgs e)
+		private void btnDodaj_Click(object sender, RoutedEventArgs e)
 		{
-			Dodaj dodaj = new Dodaj();
+			Dodavanje dodaj = new Dodavanje();
 			dodaj.ShowDialog();
 		}
 		#endregion
 
 		#region Dugme za zatvaranje
-		private void buttonZatvori_Click(object sender, RoutedEventArgs e)
+		private void btnZatvori_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();
 		}
@@ -82,7 +82,7 @@ namespace Projekat
 
 
 		#region Dugme obrisi
-		private void buttonObrisi_Click(object sender, RoutedEventArgs e)
+		private void btnObrisi_Click(object sender, RoutedEventArgs e)
 		{
 			if(Barsa.Count > 0)
 			{
@@ -135,19 +135,19 @@ namespace Projekat
 
 			if (Logovanje.ime.Equals("admin") && Logovanje.sifra.Equals("admin123"))
 			{
-				Izmeni izmijeni = new Izmeni(dataGridBarselona.SelectedIndex);
+				Izmjena izmijeni = new Izmjena(dataGridBarselona.SelectedIndex);
 				izmijeni.ShowDialog();
 
 
 			}
 			else if (Logovanje.ime.Equals("posjetioc") && Logovanje.sifra.Equals("posjetioc123"))
 			{
-				Procitaj procitaj = new Procitaj(dataGridBarselona.SelectedIndex);
+				DetaljniPodaci procitaj = new DetaljniPodaci(dataGridBarselona.SelectedIndex);
 				procitaj.textBoxNaziv.IsEnabled = false;
 				procitaj.textBoxDatum.IsEnabled = false;
 				procitaj.textBoxBroj.IsEnabled = false;
 				procitaj.richTextBoxBarselona.IsEnabled = false;
-				procitaj.imageSlika.IsEnabled = false;
+				procitaj.imgSlika.IsEnabled = false;
 				procitaj.RichTextBoxText.FontSize = 25;
 				procitaj.ShowDialog();
 

@@ -56,11 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Dodaj.xaml">
+    <Page Include="Dodavanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Izmeni.xaml">
+    <Page Include="Izmjena.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,11 +76,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Dodaj.xaml.cs">
-      <DependentUpon>Dodaj.xaml</DependentUpon>
+    <Compile Include="Dodavanje.xaml.cs">
+      <DependentUpon>Dodavanje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Izmeni.xaml.cs">
-      <DependentUpon>Izmeni.xaml</DependentUpon>
+    <Compile Include="Izmjena.xaml.cs">
+      <DependentUpon>Izmjena.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logovanje.xaml.cs">
       <DependentUpon>Logovanje.xaml</DependentUpon>
@@ -89,14 +89,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Procitaj.xaml">
+    <Page Include="DetaljniPodaci.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Procitaj.xaml.cs">
-      <DependentUpon>Procitaj.xaml</DependentUpon>
+    <Compile Include="DetaljniPodaci.xaml.cs">
+      <DependentUpon>DetaljniPodaci.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -139,8 +139,23 @@
     <Resource Include="Slike\Pozadina1.jpg" />
     <Resource Include="Slike\Underline.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Igraci\" />
+    <Resource Include="Igraci\Alba.jpg" />
+    <Resource Include="Igraci\Alves.jpg" />
+    <Resource Include="Igraci\Buskec.jpg" />
+    <Resource Include="Igraci\Cruyff.jpg" />
+    <Resource Include="Igraci\Guardiola.jpg" />
+    <Resource Include="Igraci\Iniesta.jpg" />
+    <Resource Include="Igraci\Kubala.jpg" />
+    <Resource Include="Igraci\Kuman.jpg" />
+    <Resource Include="Igraci\Maradona.jpg" />
+    <Resource Include="Igraci\Messi.jpg" />
+    <Resource Include="Igraci\Pike.jpg" />
+    <Resource Include="Igraci\Puyol.jpg" />
+    <Resource Include="Igraci\Ronaldinjo.jpg" />
+    <Resource Include="Igraci\Valdes.jpg" />
+    <Resource Include="Igraci\Xavi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
