@@ -25,14 +25,13 @@ namespace Projekat
 	{
 		#region Dodatna polja
 
-		private DataIO serializer = new DataIO();
+		public static readonly Class.DataIO serializer = new Class.DataIO();
 		public static BindingList<Barselona> Barsa { get; set; }
 
 		public static bool cbOznacen = false;					
 
-		private static BindingList<Barselona> brisanje = new BindingList<Barselona>();
+		public static BindingList<Barselona> brisanje = new BindingList<Barselona>();
 		public static BindingList<Barselona> Brisanje { get => brisanje; set => brisanje = value; }
-
 		#endregion
 
 		public MainWindow()
@@ -71,20 +70,10 @@ namespace Projekat
 		#endregion
 
 
-		#region Cuvanje u fajl
-
-		private void Window_Closing(object sender, CancelEventArgs e)
-		{
-			serializer.SerializeObject<BindingList<Barselona>>(Barsa, "barselona.xml");
-		}
-
-		#endregion
-
-
 		#region Dugme obrisi
 		private void btnObrisi_Click(object sender, RoutedEventArgs e)
 		{
-			if(Barsa.Count > 0)
+			if (Barsa.Count > 0)
 			{
 				for (int i = 0; i < brisanje.Count; i++)
 				{
@@ -109,7 +98,8 @@ namespace Projekat
 			}
 			else
 			{
-				MessageBox.Show("Nije moguce brisati iz prazne tabele.", "Greska!", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show("Ne mozete brisati iz prazne liste!", "Greska!", MessageBoxButton.OK, MessageBoxImage.Error);
+
 			}
 		}
 		#endregion
@@ -163,7 +153,7 @@ namespace Projekat
 
 
 		#region Za brisanje
-		private void cbBrisanje_MouseEnter(object sender, MouseEventArgs e)
+		private void CheckBox_MouseEnter(object sender, MouseEventArgs e)
 		{
 			cbOznacen = true;
 
@@ -180,6 +170,18 @@ namespace Projekat
 			}
 
 		}
+		#endregion
+
+
+		#region Cuvanje u fajl
+
+		private void Window_Closing(object sender, CancelEventArgs e)
+		{
+			serializer.SerializeObject<BindingList<Class.Barselona>>(Barsa, "barselona.xml");
+
+			//Barsa.Clear();
+		}
+
 		#endregion
 	}
 }

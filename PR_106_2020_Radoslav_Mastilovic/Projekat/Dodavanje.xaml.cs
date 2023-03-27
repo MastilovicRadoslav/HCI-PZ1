@@ -70,8 +70,6 @@ namespace Projekat
 					fileStream.Close();
 					this.Close();
 
-					//datePickerDatum.SelectedDate.Value.Date
-
 					Barselona igrac = new Barselona(Int32.Parse(textBoxBroj.Text), textBoxNaziv.Text, DateTime.Now, slika, naziv);
 					MainWindow.Barsa.Add(igrac);
 				}

@@ -170,7 +170,6 @@
             </Button>
             <!--Tabelarni prikaz-->
             <DataGrid x:Name="dataGridBarselona" ItemsSource="{Binding Barsa}"
-                      IsSynchronizedWithCurrentItem="True"
                       CanUserResizeRows="True"
                       IsReadOnly="True"
                       SelectionMode="Extended"
@@ -193,10 +192,8 @@
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="CheckBox" Width="*">
                         <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate x:Name="Brisanje">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <CheckBox x:Name="cbBrisanje" IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="cbBrisanje_MouseEnter"/>
-                                </StackPanel>
+                            <DataTemplate>
+                                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="CheckBox_MouseEnter"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

@@ -11,7 +11,8 @@
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+     >
     <Grid>
         <Border CornerRadius="12">
             <Border.Background>

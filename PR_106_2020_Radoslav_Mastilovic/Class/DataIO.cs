@@ -30,16 +30,15 @@ namespace Class
 			}
 			catch (Exception ex)
 			{
-				//Log exception here
-				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex);
 			}
 		}
 
 		public T DeSerializeObject<T>(string fileName)
 		{
-			if (string.IsNullOrEmpty(fileName)) { return default(T); }
+			if (string.IsNullOrEmpty(fileName)) { return default; }
 
-			T objectOut = default(T);
+			T objectOut = default;
 
 			try
 			{
@@ -65,8 +64,7 @@ namespace Class
 			}
 			catch (Exception ex)
 			{
-				//Log exception here
-				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex);
 			}
 
 			return objectOut;
