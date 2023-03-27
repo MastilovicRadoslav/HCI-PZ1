@@ -199,9 +199,9 @@
                 <TextBlock x:Name="TextBlockBrojReci" Width="36" Height="12" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" Background="AliceBlue"/>
             </StatusBar>
             
-            <RichTextBox x:Name="RichTextBoxBarselona" 
-                         SelectionChanged="RichTextBoxBarselona_SelectionChanged" 
-                         TextChanged="RichTextBoxBarselona_TextChanged" 
+            <RichTextBox x:Name="richTextBoxBarselona" 
+                         SelectionChanged="richTextBoxBarselona_SelectionChanged" 
+                         TextChanged="richTextBoxBarselona_TextChanged" 
                          Canvas.Left="384" 
                          Width="260" 
                          Height="90"
@@ -209,7 +209,7 @@
                          BorderBrush="Black">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Name="RichTextBoxText" Foreground="Gray" FontSize="10"/>
+                        <Run Name="richTextBoxText" Foreground="Gray" FontSize="10"/>
                     </Paragraph>
                 </FlowDocument>
                 
@@ -235,6 +235,19 @@
         </Border>
         <Rectangle Fill="#FF707070"  Margin="-2 8 0 0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="790" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
         <Rectangle Fill="#FF707070" Margin="-10 -5 0 0" Height="8" Canvas.Left="64" Stroke="Black" Canvas.Top="125" Width="865" HorizontalAlignment="Left" VerticalAlignment="Center" RadiusX="3.5" RadiusY="3.5"/>
-
+        <TextBlock FontWeight="Bold" 
+                   Canvas.Left="363" 
+                   TextWrapping="Wrap" 
+                   Text="IZMIJENI IGRAČA" 
+                   Canvas.Top="75" 
+                   HorizontalAlignment="Center" 
+                   Height="40"
+                   VerticalAlignment="Top" 
+                   Width="250"
+                   FontSize="30"
+                   Foreground="Black"
+                   Background="SkyBlue"
+                   Margin="0 5 0 0">
+        </TextBlock>
     </Canvas>
 </Window>

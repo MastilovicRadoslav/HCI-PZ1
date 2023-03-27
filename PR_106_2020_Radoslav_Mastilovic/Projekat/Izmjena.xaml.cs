@@ -61,7 +61,7 @@ namespace Projekat
 
 			if (System.IO.File.Exists(fajl_pomocni))
 			{
-				textRange = new TextRange(RichTextBoxBarselona.Document.ContentStart, RichTextBoxBarselona.Document.ContentEnd);
+				textRange = new TextRange(richTextBoxBarselona.Document.ContentStart, richTextBoxBarselona.Document.ContentEnd);
 				using (fileStream = new System.IO.FileStream(fajl_pomocni, System.IO.FileMode.OpenOrCreate))
 				{
 					textRange.Load(fileStream, System.Windows.DataFormats.Rtf);
@@ -90,21 +90,21 @@ namespace Projekat
 
 		#region	Promjena u RichTextBoxu
 
-		private void RichTextBoxBarselona_SelectionChanged(object sender, RoutedEventArgs e)
+		private void richTextBoxBarselona_SelectionChanged(object sender, RoutedEventArgs e)
 		{
 
-			object temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontStyleProperty);
+			object temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontStyleProperty);
 			tglButtonItalic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
 
-			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontWeightProperty);
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontWeightProperty);
 			tglButtonBold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
 
-			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
 			tglButtonUnderline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
 
-			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontFamilyProperty);
 			ComboBoxFamily.SelectedItem = temp;
-			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontSizeProperty);
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontSizeProperty);
 			ComboBoxSize.Text = temp.ToString();
 
 		}
@@ -116,7 +116,7 @@ namespace Projekat
 		{
 			if (ComboBoxFamily.SelectedItem != null)
 			{
-				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, ComboBoxFamily.SelectedItem);
+				richTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, ComboBoxFamily.SelectedItem);
 			}
 		}
 
@@ -128,7 +128,7 @@ namespace Projekat
 
 			if (ComboBoxSize.SelectedValue != null)
 			{
-				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontSizeProperty, ComboBoxSize.SelectedValue);
+				richTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontSizeProperty, ComboBoxSize.SelectedValue);
 			}
 
 		}
@@ -141,7 +141,7 @@ namespace Projekat
 		{
 			if (ComboBoxColor.SelectedValue != null)
 			{
-				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.ForegroundProperty, ComboBoxColor.SelectedValue);
+				richTextBoxBarselona.Selection.ApplyPropertyValue(Inline.ForegroundProperty, ComboBoxColor.SelectedValue);
 			}
 		}
 		#endregion
@@ -152,7 +152,7 @@ namespace Projekat
 		{
 			int count = 0;
 			int index = 0;
-			string richText = new TextRange(RichTextBoxBarselona.Document.ContentStart, RichTextBoxBarselona.Document.ContentEnd).Text;
+			string richText = new TextRange(richTextBoxBarselona.Document.ContentStart, richTextBoxBarselona.Document.ContentEnd).Text;
 
 			while (index < richText.Length && char.IsWhiteSpace(richText[index]))
 			{
@@ -177,7 +177,7 @@ namespace Projekat
 
 
 		#region Kod promjene teksta, poziva se funkcija za prebrojavanje
-		private void RichTextBoxBarselona_TextChanged(object sender, TextChangedEventArgs e)
+		private void richTextBoxBarselona_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			CountWords();
 
@@ -213,7 +213,7 @@ namespace Projekat
 
 				TextRange textRange;
 				FileStream fileStream;
-				textRange = new TextRange(RichTextBoxBarselona.Document.ContentStart, RichTextBoxBarselona.Document.ContentEnd);
+				textRange = new TextRange(richTextBoxBarselona.Document.ContentStart, richTextBoxBarselona.Document.ContentEnd);
 				fileStream = new FileStream(fajl_pomocni, FileMode.Open);
 				textRange.Save(fileStream, DataFormats.Rtf);
 				fileStream.Close();
@@ -303,18 +303,18 @@ namespace Projekat
 				}
 
 			}
-			if (RichTextBoxText.Text.Trim().Equals(""))
+			if (richTextBoxText.Text.Trim().Equals(""))
 			{
-				RichTextBoxText.Text = "Obavezno polje!";
-				RichTextBoxText.Foreground = Brushes.Red;
-				RichTextBoxBarselona.BorderBrush = Brushes.Red;
-				RichTextBoxBarselona.BorderThickness = new Thickness(1);
+				richTextBoxText.Text = "Obavezno polje!";
+				richTextBoxText.Foreground = Brushes.Red;
+				richTextBoxBarselona.BorderBrush = Brushes.Red;
+				richTextBoxBarselona.BorderThickness = new Thickness(1);
 
 			}
 			else
 			{
-				RichTextBoxText.Foreground = Brushes.Black;
-				RichTextBoxBarselona.BorderBrush = Brushes.Gray;
+				richTextBoxText.Foreground = Brushes.Black;
+				richTextBoxBarselona.BorderBrush = Brushes.Gray;
 			}
 
 

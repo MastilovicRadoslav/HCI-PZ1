@@ -64,7 +64,7 @@ namespace Projekat
 
 					TextRange textRange;
 					FileStream fileStream;
-					textRange = new TextRange(RichTextBoxBarselona.Document.ContentStart, RichTextBoxBarselona.Document.ContentEnd);
+					textRange = new TextRange(richTextBoxBarselona.Document.ContentStart, richTextBoxBarselona.Document.ContentEnd);
 					fileStream = new FileStream(naziv, FileMode.Create);
 					textRange.Save(fileStream, DataFormats.Rtf);
 					fileStream.Close();
@@ -188,19 +188,19 @@ namespace Projekat
 			#endregion
 
 			#region RichTextBox
-			if (RichTextBoxText.Text.Trim().Equals("Unesite opis igrača") || RichTextBoxText.Text.Trim().Equals(""))
+			if (richTextBoxText.Text.Trim().Equals("Unesite opis igrača") || richTextBoxText.Text.Trim().Equals(""))
 			{
 				result = false;
-				RichTextBoxText.Text = "Obavezno polje!";
-				RichTextBoxText.Foreground = Brushes.Red;
-				RichTextBoxBarselona.BorderBrush= Brushes.Red;
-				RichTextBoxBarselona.BorderThickness = new Thickness(1);
+				richTextBoxText.Text = "Obavezno polje!";
+				richTextBoxText.Foreground = Brushes.Red;
+				richTextBoxBarselona.BorderBrush= Brushes.Red;
+				richTextBoxBarselona.BorderThickness = new Thickness(1);
 
 			}
 			else
 			{
-				RichTextBoxText.Foreground = Brushes.Black;
-				RichTextBoxBarselona.BorderBrush = Brushes.Gray;
+				richTextBoxText.Foreground = Brushes.Black;
+				richTextBoxBarselona.BorderBrush = Brushes.Gray;
 				
 
 			}
@@ -261,21 +261,21 @@ namespace Projekat
 
 		#region RichTextBox opis igrača
 
-		private void RichTextBoxBarselona_GotFocus(object sender, RoutedEventArgs e)
+		private void richTextBoxBarselona_GotFocus(object sender, RoutedEventArgs e)
 		{
-			if(RichTextBoxText.Text.Trim().Equals("Unesite opis igrača") || RichTextBoxText.Text.Trim().Equals("Obavezno polje!"))
+			if(richTextBoxText.Text.Trim().Equals("Unesite opis igrača") || richTextBoxText.Text.Trim().Equals("Obavezno polje!"))
 			{
-				RichTextBoxText.Text = "";
-				RichTextBoxText.Foreground = Brushes.Black;
+				richTextBoxText.Text = "";
+				richTextBoxText.Foreground = Brushes.Black;
 			}
 		}
 
-		private void RichTextBoxBarselona_LostFocus(object sender, RoutedEventArgs e)
+		private void richTextBoxBarselona_LostFocus(object sender, RoutedEventArgs e)
 		{
-			if (RichTextBoxText.Text.Trim().Equals(String.Empty))
+			if (richTextBoxText.Text.Trim().Equals(String.Empty))
 			{
-				RichTextBoxText.Text = "Unesite opis igrača";
-				RichTextBoxText.Foreground = Brushes.Gray;
+				richTextBoxText.Text = "Unesite opis igrača";
+				richTextBoxText.Foreground = Brushes.Gray;
 			}
 		}
 		#endregion
@@ -301,31 +301,31 @@ namespace Projekat
 			{
 				slika = openFileDialog.FileName;
 				Uri fileUri = new Uri(slika);
-				imageSlika.Source = new BitmapImage(fileUri);
+				imgSlika.Source = new BitmapImage(fileUri);
 			}
 		}
 		#endregion
 
 		#region Promjena u RichTextBoxu
 
-		private void RichTextBoxBarselona_SelectionChanged(object sender, RoutedEventArgs e)
+		private void richTextBoxBarselona_SelectionChanged(object sender, RoutedEventArgs e)
 		{
-			object temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontStyleProperty);
+			object temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontStyleProperty);
 			tglButtonItalic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
 
-			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontWeightProperty);
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontWeightProperty);
 			tglButtonBold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
 
-			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
 			tglButtonUnderline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
 
-			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontFamilyProperty);
 			ComboBoxFamily.SelectedItem = temp;
 
-			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.FontSizeProperty);
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontSizeProperty);
 			ComboBoxSize.Text = temp.ToString();
 
-			temp = RichTextBoxBarselona.Selection.GetPropertyValue(Inline.ForegroundProperty);
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.ForegroundProperty);
 
 		}
 		#endregion
@@ -333,9 +333,9 @@ namespace Projekat
 		#region Promjena tipa slova
 		private void ComboBoxFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			if (ComboBoxFamily.SelectedItem != null && !RichTextBoxBarselona.Selection.IsEmpty)
+			if (ComboBoxFamily.SelectedItem != null && !richTextBoxBarselona.Selection.IsEmpty)
 			{
-				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, ComboBoxFamily.SelectedItem);
+				richTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, ComboBoxFamily.SelectedItem);
 			}
 
 		}
@@ -345,9 +345,9 @@ namespace Projekat
 		#region Promjena veličine slova
 		private void ComboBoxSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			if (ComboBoxSize.SelectedValue != null && !RichTextBoxBarselona.Selection.IsEmpty)
+			if (ComboBoxSize.SelectedValue != null && !richTextBoxBarselona.Selection.IsEmpty)
 			{
-				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontSizeProperty, ComboBoxSize.SelectedValue);
+				richTextBoxBarselona.Selection.ApplyPropertyValue(Inline.FontSizeProperty, ComboBoxSize.SelectedValue);
 			}
 
 		}
@@ -356,9 +356,9 @@ namespace Projekat
 		#region Promjena boje slova
 		private void ComboBoxColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			if (ComboBoxColor.SelectedValue != null && !RichTextBoxBarselona.Selection.IsEmpty)
+			if (ComboBoxColor.SelectedValue != null && !richTextBoxBarselona.Selection.IsEmpty)
 			{
-				RichTextBoxBarselona.Selection.ApplyPropertyValue(Inline.ForegroundProperty, ComboBoxColor.SelectedValue);
+				richTextBoxBarselona.Selection.ApplyPropertyValue(Inline.ForegroundProperty, ComboBoxColor.SelectedValue);
 			}
 		}
 		#endregion
@@ -370,7 +370,7 @@ namespace Projekat
 		{
 			int count = 0;
 			int index = 0;
-			string richText = new TextRange(RichTextBoxBarselona.Document.ContentStart, RichTextBoxBarselona.Document.ContentEnd).Text;
+			string richText = new TextRange(richTextBoxBarselona.Document.ContentStart, richTextBoxBarselona.Document.ContentEnd).Text;
 
 			while (index < richText.Length && char.IsWhiteSpace(richText[index]))
 			{
@@ -393,7 +393,7 @@ namespace Projekat
 		#endregion
 
 		#region Prikaz broja izbrojanih rijeci
-		private void RichTextBoxBarselona_TextChanged(object sender, TextChangedEventArgs e)
+		private void richTextBoxBarselona_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			CountWords();
 
