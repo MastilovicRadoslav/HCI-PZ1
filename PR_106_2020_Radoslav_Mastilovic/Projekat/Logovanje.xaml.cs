@@ -64,8 +64,10 @@ namespace Projekat
 					window.dataGridBarselona.CanUserResizeColumns = false;
 					window.dataGridBarselona.CanUserResizeRows = false;
 					window.dataGridBarselona.CanUserSortColumns = false;
-					window.btnObrisi.Visibility = Visibility.Hidden;
-					window.btnDodaj.Visibility = Visibility.Hidden;
+					window.btnObrisi.IsEnabled = false;
+					window.btnDodaj.IsEnabled = false;
+					//window.btnObrisi.Visibility = Visibility.Hidden;
+					//window.btnDodaj.Visibility = Visibility.Hidden;
 					window.ShowDialog();
 
 				}else if (textBoxIme.Text.Trim().Equals("admin") && !passwordBoxSifra.Password.Equals("admin123"))
@@ -195,9 +197,9 @@ namespace Projekat
 
 
 		#region Pomjeranje prozora
-		private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+		private void Window_MouseDown(object sender, MouseButtonEventArgs e) //Ako je pritisnut mis na aplikaciji
 		{
-			if (e.LeftButton == MouseButtonState.Pressed)
+			if (e.LeftButton == MouseButtonState.Pressed) //Pomjeraj
 			{
 				DragMove();
 			}
@@ -205,24 +207,25 @@ namespace Projekat
 		#endregion
 
 		#region Minimizacija prozora
-		private void btnMinimize_Click(object sender, RoutedEventArgs e)
+		private void btnMinimize_Click(object sender, RoutedEventArgs e)//Ako je pritisnuto dugme Minimize
 		{
-			WindowState = WindowState.Minimized;
+			WindowState = WindowState.Minimized; //Smanji prozor
 
 		}
 		#endregion
 
 		#region Izlazak iz prozora
-		private void btnClose_Click(object sender, RoutedEventArgs e)
+		private void btnClose_Click(object sender, RoutedEventArgs e)//Ako je pritisnuto dugme Close
 		{
-			Application.Current.Shutdown();
+			Application.Current.Shutdown();	//Zatvori prozor
 		}
 		#endregion
 
 		#region Dugme za izlaz
-		private void btnIzlaz_Click(object sender, RoutedEventArgs e)
+		private void btnIzlaz_Click(object sender, RoutedEventArgs e) //Ako je pritisnuto dugme za izlaza
 		{
-			this.Close();
+			this.Close(); //Izadji
+			Application.Current.Shutdown(); //Zatvori aplikaciju
 		}
 
 		#endregion

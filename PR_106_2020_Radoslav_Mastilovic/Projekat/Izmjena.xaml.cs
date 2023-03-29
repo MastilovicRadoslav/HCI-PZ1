@@ -49,7 +49,7 @@ namespace Projekat
 
 			slika_pomocna = barsa.Slika;
 			Uri uri = new Uri(barsa.Slika);
-			imageSlika.Source = new BitmapImage(uri);
+			imgSlika.Source = new BitmapImage(uri);
 
 			fajl_pomocni = barsa.Fajl;
 
@@ -148,9 +148,9 @@ namespace Projekat
 
 
 		#region Funckija za prebrojavanje rijeci
-		private void CountWords()
+		private void BrojRijeci()
 		{
-			int count = 0;
+			int brojRijeci = 0;
 			int index = 0;
 			string richText = new TextRange(richTextBoxBarselona.Document.ContentStart, richTextBoxBarselona.Document.ContentEnd).Text;
 
@@ -162,15 +162,19 @@ namespace Projekat
 			while (index < richText.Length)
 			{
 				while (index < richText.Length && !char.IsWhiteSpace(richText[index]))
+				{
 					index++;
+				}
 
-				count++;
+				brojRijeci++;
 
 				while (index < richText.Length && char.IsWhiteSpace(richText[index]))
+				{
 					index++;
+				}
 
 			}
-			TextBlockBrojReci.Text = count.ToString();
+			TextBlockBrojReci.Text = brojRijeci.ToString();
 
 		}
 		#endregion
@@ -179,7 +183,7 @@ namespace Projekat
 		#region Kod promjene teksta, poziva se funkcija za prebrojavanje
 		private void richTextBoxBarselona_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			CountWords();
+			BrojRijeci();
 
 		}
 		#endregion
@@ -193,7 +197,7 @@ namespace Projekat
 			{
 				pomoc = openFileDialog.FileName;
 				Uri uri = new Uri(pomoc);
-				imageSlika.Source = new BitmapImage(uri);
+				imgSlika.Source = new BitmapImage(uri);
 				textBoxSlika.Text = "";
 			}
 		}
@@ -205,7 +209,7 @@ namespace Projekat
 		{
 			if (validate())
 			{
-				if (pomoc == "")
+				if (pomoc == "") //provjera da li je slika uopste promijenjena, ako nije ostaje nam ista slika
 				{
 					pomoc = slika_pomocna;
 				}
@@ -277,16 +281,23 @@ namespace Projekat
 						textBoxGreskaBroj.BorderThickness = new Thickness(0);
 						textBoxGreskaBroj.Text = "";
 					}
-
-					else
+					else if (Int32.Parse(textBoxBroj.Text) <= 0)
 					{
 						result = false;
 						textBoxBroj.Foreground = Brushes.Red;
 						textBoxBroj.BorderBrush = Brushes.Red;
 						textBoxBroj.BorderThickness = new Thickness(1);
 						textBoxGreskaBroj.Text = "Unesite pozitivan broj!";
-						textBoxGreskaBroj.BorderThickness = new Thickness(1);
-						textBoxGreskaBroj.BorderBrush = Brushes.Red;
+						textBoxGreskaBroj.Foreground = Brushes.Red;
+					}
+					else
+					{
+						result = false;
+						textBoxBroj.Foreground = Brushes.Red;
+						textBoxBroj.BorderBrush = Brushes.Red;
+						textBoxBroj.BorderThickness = new Thickness(1);
+						textBoxGreskaBroj.Text = "Unesite broj manji od 100!";
+						textBoxGreskaBroj.Foreground = Brushes.Red;
 					}
 
 				}

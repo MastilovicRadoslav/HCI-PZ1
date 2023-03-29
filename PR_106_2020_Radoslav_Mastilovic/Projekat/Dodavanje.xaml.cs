@@ -28,17 +28,17 @@ namespace Projekat
 			#region Podešavanje početnih vrijednosti
 			InitializeComponent();
 			textBoxNaziv.Text = "Unesite naziv igrača";
-			textBoxNaziv.Foreground = Brushes.Thistle;
+			textBoxNaziv.Foreground = Brushes.Gray;
 
 			textBoxBroj.Text = "Unesite broj dresa";
-			textBoxBroj.Foreground = Brushes.Thistle;
+			textBoxBroj.Foreground = Brushes.Gray;
 
 
 
 			ComboBoxFamily.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
 			ComboBoxSize.ItemsSource = new List<double> { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 };
 			ComboBoxFamily.SelectedIndex = 2;
-			ComboBoxColor.ItemsSource = new List<string>() { "Black", "White", "Yellow", "Red", "Purple", "Orange", "Green", "Brown", "Blue" };
+			ComboBoxColor.ItemsSource = new List<string>() { "Black", "White", "Blue", "Red", "Green", "Yellow", "Gray", "Pink", "Brown", "Purple" };
 			ComboBoxColor.SelectedIndex = 0;
 			#endregion	
 		}
@@ -127,12 +127,21 @@ namespace Projekat
 				bool broj = int.TryParse(textBoxBroj.Text, out _);
 				if (broj)
 				{
-					if (Int32.Parse(textBoxBroj.Text) > 0)
+					if (Int32.Parse(textBoxBroj.Text) > 0 && Int32.Parse(textBoxBroj.Text) < 100)
 					{
 						textBoxBroj.Foreground = Brushes.Black;
 						textBoxBroj.BorderBrush = Brushes.Green;
 						textBoxBroj.BorderThickness = new Thickness(1);
 						textBoxGreskaBroj.Text = "";
+					}
+					else if(Int32.Parse(textBoxBroj.Text) <= 0)
+					{
+						result = false;
+						textBoxBroj.Foreground = Brushes.Red;
+						textBoxBroj.BorderBrush = Brushes.Red;
+						textBoxBroj.BorderThickness = new Thickness(1);
+						textBoxGreskaBroj.Text = "Unesite pozitivan broj!";
+						textBoxGreskaBroj.Foreground = Brushes.Red;
 					}
 					else
 					{
@@ -140,10 +149,9 @@ namespace Projekat
 						textBoxBroj.Foreground = Brushes.Red;
 						textBoxBroj.BorderBrush = Brushes.Red;
 						textBoxBroj.BorderThickness = new Thickness(1);
-						textBoxGreskaBroj.Text = "Unesite pozitivan broj!";
-						textBoxGreskaBroj.BorderBrush = Brushes.Red;
+						textBoxGreskaBroj.Text = "Unesite broj manji od 100!";
+						textBoxGreskaBroj.Foreground = Brushes.Red;
 					}
-
 				}
 				else
 				{
@@ -151,7 +159,7 @@ namespace Projekat
 					textBoxBroj.Foreground = Brushes.Red;
 					textBoxBroj.BorderBrush = Brushes.Red;
 					textBoxBroj.BorderThickness = new Thickness(1);
-					textBoxGreskaBroj.Text = "Unesite broj!";
+					textBoxGreskaBroj.Text = "Niste unijeli broj!";
 					textBoxGreskaBroj.BorderBrush = Brushes.Red;
 
 				}
@@ -169,9 +177,6 @@ namespace Projekat
 				labelaGreskaSlika.Foreground = Brushes.Red;
 				labelaGreskaSlika.BorderThickness = new Thickness(1);
 				textBoxSlika.Text = "";
-
-
-
 			}
 			else
 			{
@@ -193,14 +198,11 @@ namespace Projekat
 				richTextBoxText.Foreground = Brushes.Red;
 				richTextBoxBarselona.BorderBrush= Brushes.Red;
 				richTextBoxBarselona.BorderThickness = new Thickness(1);
-
 			}
 			else
 			{
 				richTextBoxText.Foreground = Brushes.Black;
 				richTextBoxBarselona.BorderBrush = Brushes.Gray;
-				
-
 			}
 			#endregion
 
@@ -364,9 +366,9 @@ namespace Projekat
 
 
 		#region Funkcija za prebrojavanje broja rijeci
-		private void CountWords()
+		private void BrojRijeci()
 		{
-			int count = 0;
+			int brojRijeci = 0;
 			int index = 0;
 			string richText = new TextRange(richTextBoxBarselona.Document.ContentStart, richTextBoxBarselona.Document.ContentEnd).Text;
 
@@ -378,22 +380,25 @@ namespace Projekat
 			while (index < richText.Length)
 			{
 				while (index < richText.Length && !char.IsWhiteSpace(richText[index]))
+				{
 					index++;
+				}
 
-				count++;
+				brojRijeci++;
 
 				while (index < richText.Length && char.IsWhiteSpace(richText[index]))
+				{
 					index++;
-
+				}
 			}
-			TextBlockBrojReci.Text = count.ToString();
+			TextBlockBrojReci.Text = brojRijeci.ToString();
 		}
 		#endregion
 
 		#region Prikaz broja izbrojanih rijeci
 		private void richTextBoxBarselona_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			CountWords();
+			BrojRijeci();
 
 		}
 		#endregion

@@ -219,7 +219,7 @@
         </Grid>
 
         <TextBox x:Name="textBoxSlika" IsReadOnly="True" Canvas.Left="384" Canvas.Top="407" Width="121" Height="63" Text="Slika" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image Margin="-13.5 0 0 0" x:Name="imageSlika" Width="122" Height="62" Canvas.Left="397" Canvas.Top="408" RenderTransformOrigin="0.25,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Image Margin="-13.5 0 0 0" x:Name="imgSlika" Width="122" Height="62" Canvas.Left="397" Canvas.Top="408" RenderTransformOrigin="0.25,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" />
         <DatePicker Name="trenutniDatum" 
                     FontSize="15" 
                     Canvas.Left="511" 

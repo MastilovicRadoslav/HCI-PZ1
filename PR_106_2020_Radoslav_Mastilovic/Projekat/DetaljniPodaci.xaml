@@ -41,7 +41,6 @@
 
 
         <Grid Height="550" Width="906" Canvas.Left="-16">
-
             <TextBox x:Name="textBoxNaziv" 
                      TextWrapping="Wrap"  
                      BorderThickness="0" 
@@ -91,11 +90,8 @@
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Width="200" Height="40"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                        <Border Width="200" Height="40" CornerRadius="9" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -139,18 +135,18 @@
             <Rectangle Fill="#FF707070"  Margin="71,121,-47,0" Height="8" Canvas.Left="85" Stroke="Black"  Canvas.Top="475" Width="867" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
             <Rectangle Fill="#FF707070" Margin="100,485,0,0" Height="8" Canvas.Left="64" Stroke="Black" Canvas.Top="125" Width="789" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="3.5" RadiusY="3.5"/>
         </Grid>
-        <Label     Content="PODACI O IGRAČU" 
-                   FontSize="45" 
-                   FontWeight="Bold"
-                   Foreground="SkyBlue" 
-                   VerticalContentAlignment="Center" 
-                   HorizontalContentAlignment="Center" 
-                   HorizontalAlignment="Left" 
-                   Margin="244,130,0,0" 
-                   VerticalAlignment="Top" 
-                   Width="500"
-                   Height="70"
-                   Background="AliceBlue">
+        <Label Content="PODACI O IGRAČU" 
+               FontSize="45" 
+               FontWeight="Bold"
+               Foreground="SkyBlue" 
+               VerticalContentAlignment="Center" 
+               HorizontalContentAlignment="Center" 
+               HorizontalAlignment="Left" 
+               Margin="244,130,0,0" 
+               VerticalAlignment="Top" 
+               Width="500"
+               Height="70"
+               Background="AliceBlue">
         </Label>
     </Canvas>
 </Window>

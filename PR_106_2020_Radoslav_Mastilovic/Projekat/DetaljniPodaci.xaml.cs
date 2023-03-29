@@ -20,6 +20,9 @@ namespace Projekat
 	/// </summary>
 	public partial class DetaljniPodaci : Window
 	{
+		private string fajl_pomocni = "";
+		private string slika_pomocna = "";
+
 		public DetaljniPodaci(int index)
 		{
 			#region Ime, Broj dresa, Datum, Sika
@@ -30,11 +33,15 @@ namespace Projekat
 			textBoxBroj.Text = "Broj dresa je: " + Convert.ToString(barsa.brojDresa);
 			textBoxDatum.Text = "Datum je: " + barsa.datumPrelaska.ToString() + ".";
 
+			//slika_pomocna = barsa.Slika;
+			
 			Uri uri = new Uri(barsa.Slika);
 			imgSlika.Source = new BitmapImage(uri);
 
 			TextRange textRange;
 			System.IO.FileStream fileStream;
+
+			//fajl_pomocni = barsa.Fajl;
 
 			if (System.IO.File.Exists(barsa.Fajl))
 			{

@@ -74,11 +74,8 @@
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Width="200" Height="40"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                        <Border Width="200" Height="40" CornerRadius="9" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -116,11 +113,8 @@
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Width="200" Height="40"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                        <Border Width="200" Height="40" CornerRadius="9" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -159,11 +153,8 @@
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Width="200" Height="40"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                        <Border Width="200" Height="40" CornerRadius="9" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -189,6 +180,7 @@
                       SelectionChanged="dataGridBarselona_SelectionChanged">
 
                 <!--Kolone u tabelarnom prikazu-->
+                <!--CheckBox-->
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="CheckBox" Width="*">
                         <DataGridTemplateColumn.CellTemplate>
@@ -198,9 +190,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <!--<DataGridTextColumn Header="Naziv igrača"  Width="*" CanUserResize="False" FontSize="10" Binding="{Binding NazivIgraca}"/>                  
-                    <DataGridTextColumn Header="Broj dresa" Width="*" CanUserResize="False" FontSize="10" Binding="{Binding BrojDresa}" />-->
-
+                    <!--Hyperlink-->
                     <DataGridTemplateColumn Header="Hiperlink" Width="*"  x:Name="hiperlink" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -211,6 +201,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
+                    <!--Slika-->
                     <DataGridTemplateColumn Header="Slika" Width="*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -218,9 +209,13 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    
+                    <!--Datum-->
                     <DataGridTextColumn  Header="Datum" Width="*" CanUserResize="False" FontSize="10" Binding="{Binding DatumPrelaska}"/>
+                
                 </DataGrid.Columns>
             </DataGrid>
+            
             <!--Naslov-->
             <Label Content="FK Barselona" 
                    FontWeight="Bold" 
@@ -231,8 +226,7 @@
                    FontStyle="Italic" 
                    Background="Transparent" 
                    Foreground="SkyBlue" Width="790"
-                   HorizontalContentAlignment="Center"
-                   />
+                   HorizontalContentAlignment="Center"/>
         </Grid>
     </Canvas>
 </Window>

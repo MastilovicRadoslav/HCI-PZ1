@@ -11,8 +11,7 @@
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown"
         Background="Transparent"
-        AllowsTransparency="True"
-     >
+        AllowsTransparency="True">
     <Grid>
         <Border CornerRadius="12">
             <Border.Background>
@@ -23,6 +22,7 @@
             <Border CornerRadius="10"
                     BorderThickness="1"
                     Opacity="0.8">
+
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1, 1">
                         <GradientStop Color="#462AD8" Offset="0" />
@@ -68,24 +68,23 @@
                                 Cursor="Hand"
                                 Grid.Column="1"
                                 Click="btnMinimize_Click">
+                            <!--Pozadina i kada mis dodje na klik-->
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Background" Value="#28AEED"/>
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#278BEF"/>
+                                            <Setter Property="Background" Value="#DA34AE"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
                             </Button.Style>
-
+                            <!--Kontent unutar Button-->
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
-                                    <Border Width="18" Height="18"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
+                                    <Border Width="18" Height="18" CornerRadius="9" Background="{TemplateBinding Background}">
                                         <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
+                                                          HorizontalAlignment="Center"/>
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
@@ -133,7 +132,7 @@
                                Width="200" 
                                Height="100" 
                                Margin="0" 
-                               Stretch="Uniform" />
+                               Stretch="Uniform"/>
 
                         <TextBlock Text="Prijavite se ili kao admin ili kao posjetilac na stranicu FK Barselona."
                                    Foreground="DarkGray"
@@ -144,13 +143,13 @@
                                    TextAlignment="Center"
                                    Margin="0 20 0 0"/>
 
-
                         <TextBlock Text="Korisničko ime"
                                    Foreground="DarkGray"
                                    FontSize="15"
                                    FontWeight="Medium"
                                    FontFamily="Montserrat"
                                    Margin="0 35 0 0"/>
+                        
                         <TextBox x:Name="textBoxIme"
                                  FontSize="13"
                                  FontWeight="Medium"
@@ -189,19 +188,19 @@
                                    FontFamily="Montserrat"
                                    Margin="0 35 0 0"/>
                         <PasswordBox x:Name="passwordBoxSifra"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0 0 0 1"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="0 5 0 0"
-                             Padding="30 0 0 0"
-                             GotFocus="passwordBoxSifra_GotFocus"
-                             LostFocus="passwordBoxSifra_LostFocus">
+                                     FontSize="13"
+                                     FontWeight="Medium"
+                                     FontFamily="Montserrat"
+                                     Foreground="White"
+                                     CaretBrush="LightGray"
+                                     BorderBrush="DarkGray"
+                                     BorderThickness="0 0 0 1"
+                                     Height="28"
+                                     VerticalContentAlignment="Center"
+                                     Margin="0 5 0 0"
+                                     Padding="30 0 0 0"
+                                     GotFocus="passwordBoxSifra_GotFocus"
+                                     LostFocus="passwordBoxSifra_LostFocus">
 
                             <PasswordBox.Background>
                                 <ImageBrush ImageSource="/Slike/Kljuc.png" 
@@ -211,15 +210,14 @@
                         </PasswordBox>
 
                         <Label x:Name="labelSifraGreska"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"
-                             Foreground="Red"
-                             BorderBrush="Red"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="0 5 0 0" 
-                             />
+                               FontSize="13"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"
+                               Foreground="Red"
+                               BorderBrush="Red"
+                               Height="28"
+                               VerticalContentAlignment="Center"
+                               Margin="0 5 0 0" />
 
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0 0 0 0"
@@ -255,29 +253,23 @@
 
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
-                                        <Border Width="100" Height="30"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
+                                        <Border Width="100" Height="30" CornerRadius="9" Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
 
-
-
-
                             <Button x:Name="btnIzlaz"
-                            BorderThickness="0"
-                            Content="Izlaz"
-                            Foreground="White"
-                            FontSize="12"
-                            FontFamily="Montserrat"
-                            Cursor="Hand"
-                            Grid.Column="2"
-                            Click="btnIzlaz_Click"
-                            Margin="0 20 10 0">
+                                    BorderThickness="0"
+                                    Content="Izlaz"
+                                    Foreground="White"
+                                    FontSize="12"
+                                    FontFamily="Montserrat"
+                                    Cursor="Hand"
+                                    Grid.Column="2"
+                                    Click="btnIzlaz_Click"
+                                    Margin="0 20 10 0">
 
                                 <Button.Style>
                                     <Style TargetType="Button">
@@ -299,11 +291,8 @@
 
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
-                                        <Border Width="100" Height="30"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
+                                        <Border Width="100" Height="30" CornerRadius="9" Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>

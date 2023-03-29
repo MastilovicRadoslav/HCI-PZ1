@@ -28,7 +28,7 @@ namespace Projekat
 		public static readonly Class.DataIO serializer = new Class.DataIO();
 		public static BindingList<Barselona> Barsa { get; set; }
 
-		public static bool cbOznacen = false;					
+		public static bool chexkBoxOznacen = false;					
 
 		public static BindingList<Barselona> brisanje = new BindingList<Barselona>();
 		public static BindingList<Barselona> Brisanje { get => brisanje; set => brisanje = value; }
@@ -54,7 +54,7 @@ namespace Projekat
 
 		#region Dugme dodaj
 
-		private void btnDodaj_Click(object sender, RoutedEventArgs e)
+		private void btnDodaj_Click(object sender, RoutedEventArgs e)	 //Dodaj
 		{
 			Dodavanje dodaj = new Dodavanje();
 			dodaj.ShowDialog();
@@ -62,7 +62,7 @@ namespace Projekat
 		#endregion
 
 		#region Dugme za zatvaranje
-		private void btnZatvori_Click(object sender, RoutedEventArgs e)
+		private void btnZatvori_Click(object sender, RoutedEventArgs e)	 //Zatvori
 		{
 			this.Close();
 		}
@@ -71,7 +71,7 @@ namespace Projekat
 
 
 		#region Dugme obrisi
-		private void btnObrisi_Click(object sender, RoutedEventArgs e)
+		private void btnObrisi_Click(object sender, RoutedEventArgs e)	//Obrisi
 		{
 			if (Barsa.Count > 0)
 			{
@@ -107,11 +107,11 @@ namespace Projekat
 		#region Promjena selekcije u DataGrid
 		private void dataGridBarselona_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			if (cbOznacen == true)
+			if (chexkBoxOznacen == true)
 			{
 				brisanje.Add((Barselona)dataGridBarselona.SelectedItem);
 			}
-			cbOznacen = false;
+			chexkBoxOznacen = false;
 		}
 		#endregion
 
@@ -127,8 +127,6 @@ namespace Projekat
 			{
 				Izmjena izmijeni = new Izmjena(dataGridBarselona.SelectedIndex);
 				izmijeni.ShowDialog();
-
-
 			}
 			else if (Logovanje.ime.Equals("posjetioc") && Logovanje.sifra.Equals("posjetioc123"))
 			{
@@ -155,14 +153,14 @@ namespace Projekat
 		#region Za brisanje
 		private void CheckBox_MouseEnter(object sender, MouseEventArgs e)
 		{
-			cbOznacen = true;
+			chexkBoxOznacen = true;
 
 		}
 		#endregion
 
 		#region Manipulisanje prozorom
 
-		private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+		private void Window_MouseDown(object sender, MouseButtonEventArgs e)   //Pomjeranje prozora
 		{
 			if (e.LeftButton == MouseButtonState.Pressed)
 			{
@@ -175,7 +173,7 @@ namespace Projekat
 
 		#region Cuvanje u fajl
 
-		private void Window_Closing(object sender, CancelEventArgs e)
+		private void Window_Closing(object sender, CancelEventArgs e)	//Sacuvaj u fajl
 		{
 			serializer.SerializeObject<BindingList<Class.Barselona>>(Barsa, "barselona.xml");
 
