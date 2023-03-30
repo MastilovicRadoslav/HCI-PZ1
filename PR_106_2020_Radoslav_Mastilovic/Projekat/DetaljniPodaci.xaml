@@ -68,7 +68,7 @@
                     FontFamily="Montserrat"
                     Cursor="Hand" 
                     Width="220" Height="45"
-                    Margin="581,505,105,0">
+                    Margin="384,500,302,-14">
 
                 <Button.Style>
                     <Style TargetType="Button">
