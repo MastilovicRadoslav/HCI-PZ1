@@ -104,7 +104,8 @@
                          Canvas.Top="270" 
                          Margin="400,237,215,163"
                          Width="291"
-                         Height="150">
+                         Height="150"
+                         ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <FlowDocument>
                     <Paragraph>
                         <Run Name="RichTextBoxText" Foreground="Gray" FontSize="15"/>

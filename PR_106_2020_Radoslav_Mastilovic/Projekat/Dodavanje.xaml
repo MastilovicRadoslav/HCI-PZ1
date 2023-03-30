@@ -243,7 +243,7 @@
                 <TextBlock x:Name="TextBlockBrojReci" Width="36" Height="12" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" Background="AliceBlue"/>
             </StatusBar>
             <!--Opis igraca RichTextBox-->
-            <RichTextBox x:Name="richTextBoxBarselona" 
+            <RichTextBox x:Name="richTextBoxBarselona"  
                          SelectionChanged="richTextBoxBarselona_SelectionChanged" 
                          TextChanged="richTextBoxBarselona_TextChanged" 
                          Canvas.Left="384" 
@@ -252,8 +252,9 @@
                          BorderBrush="Black" 
                          GotFocus="richTextBoxBarselona_GotFocus"
                          LostFocus="richTextBoxBarselona_LostFocus"
-                         Height="90">
-                <FlowDocument>
+                         Height="90"
+                         ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <FlowDocument >
                     <Paragraph LineHeight="2">
                         <Run Name="richTextBoxText" Text="Unesite opis igrača" Foreground="Gray" FontSize="10"/>
                     </Paragraph>

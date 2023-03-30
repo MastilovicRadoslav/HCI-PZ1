@@ -207,7 +207,7 @@
                          Height="90"
                          Margin="378,312,217,160" 
                          BorderBrush="Black"
-                         ScrollViewer.CanContentScroll="True">
+                         ScrollViewer.VerticalScrollBarVisibility="Visible">
 
                 <FlowDocument>
                     <Paragraph LineHeight="2">
