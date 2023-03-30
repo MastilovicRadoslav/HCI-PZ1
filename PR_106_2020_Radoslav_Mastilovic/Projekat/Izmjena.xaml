@@ -206,13 +206,15 @@
                          Width="260" 
                          Height="90"
                          Margin="378,312,217,160" 
-                         BorderBrush="Black">
+                         BorderBrush="Black"
+                         ScrollViewer.CanContentScroll="True">
+
                 <FlowDocument>
-                    <Paragraph>
+                    <Paragraph LineHeight="2">
                         <Run Name="richTextBoxText" Foreground="Gray" FontSize="10"/>
                     </Paragraph>
                 </FlowDocument>
-                
+
             </RichTextBox>
 
 

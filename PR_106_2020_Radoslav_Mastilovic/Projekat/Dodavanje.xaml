@@ -239,7 +239,7 @@
                 </ToolBar>
             </DockPanel>
 
-            <StatusBar BorderThickness="2" BorderBrush="Black"  Width="40"  Height="18" Margin="343,380,482,160">
+            <StatusBar BorderThickness="2" BorderBrush="Black"  Width="40"  Height="18" Margin="343,380,482,156">
                 <TextBlock x:Name="TextBlockBrojReci" Width="36" Height="12" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" Background="AliceBlue"/>
             </StatusBar>
             <!--Opis igraca RichTextBox-->
@@ -252,9 +252,9 @@
                          BorderBrush="Black" 
                          GotFocus="richTextBoxBarselona_GotFocus"
                          LostFocus="richTextBoxBarselona_LostFocus"
-                         Height="86">
+                         Height="90">
                 <FlowDocument>
-                    <Paragraph>
+                    <Paragraph LineHeight="2">
                         <Run Name="richTextBoxText" Text="Unesite opis igrača" Foreground="Gray" FontSize="10"/>
                     </Paragraph>
                 </FlowDocument>

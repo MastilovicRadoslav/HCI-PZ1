@@ -73,33 +73,26 @@ namespace Projekat
 		#region Dugme obrisi
 		private void btnObrisi_Click(object sender, RoutedEventArgs e)	//Obrisi
 		{
-			if (Barsa.Count > 0)
-			{
-				for (int i = 0; i < brisanje.Count; i++)
-				{
-					Barsa.Remove(brisanje[i]);
-				}
 
-				for (int i = 0; i < brisanje.Count; i++)
+			for (int i = 0; i < brisanje.Count; i++)
+			{
+				Barsa.Remove(brisanje[i]);
+			}
+
+			for (int i = 0; i < brisanje.Count; i++)
+			{
+				if (brisanje[i] != null)
 				{
-					if (brisanje[i] != null)
+					string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, brisanje[i].Fajl);
+					try
 					{
-						string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, brisanje[i].Fajl);
-						try
-						{
-							File.Delete(filePath);
-						}
-						catch (IOException exp)
-						{
-							Console.WriteLine(exp.Message);
-						}
+						File.Delete(filePath);
+					}
+					catch (IOException exp)
+					{
+						Console.WriteLine(exp.Message);
 					}
 				}
-			}
-			else
-			{
-				MessageBox.Show("Ne mozete brisati iz prazne liste!", "Greska!", MessageBoxButton.OK, MessageBoxImage.Error);
-
 			}
 		}
 		#endregion

@@ -20,8 +20,8 @@ namespace Projekat
 	/// </summary>
 	public partial class DetaljniPodaci : Window
 	{
-		private string fajl_pomocni = "";
-		private string slika_pomocna = "";
+		//private string fajl_pomocni = "";
+		//private string slika_pomocna = "";
 
 		public DetaljniPodaci(int index)
 		{
