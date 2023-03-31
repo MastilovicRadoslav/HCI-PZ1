@@ -39,12 +39,11 @@ Broj dresa: 9
 Opis: 
 
 Puno ime: Hendrik Johannes Cruijff
-Datum rođenja: 25. aprila 1947.
-Mjesto rođenja: Amsterdam , Holandija
+Datum rođenja: 25. aprila 1947, Amsterdam, Holandija
 Datum smrti: 24. marta 2016. (68 godina)
-Mesto smrti: Barselona , ​​Španija
+Mesto smrti: Barselona, ​​Španija
 Visina: 1,78 m 
-Pozicija: Napadač , napadački vezni
+Pozicija: Napadač, napadački vezni
 
 Pep Guariola:
 Slika: --

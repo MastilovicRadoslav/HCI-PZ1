@@ -209,7 +209,7 @@
                      Canvas.Top="186" Canvas.Left="370" 
                      LostFocus="textBoxNaziv_LostFocus" 
                      GotFocus="textBoxNaziv_GotFocus" 
-                     Margin="383,156,222,367" />
+                     Margin="383,158,222,369" />
             
             <TextBox x:Name="textBoxBroj" 
                      TextWrapping="Wrap" 
@@ -217,7 +217,7 @@
                      Width="260" 
                      Canvas.Top="230" Canvas.Left="370" 
                      LostFocus="textBoxBroj_LostFocus"  
-                     GotFocus="textBoxBroj_GotFocus" Margin="383,223,222,301" />
+                     GotFocus="textBoxBroj_GotFocus" Margin="383,225,222,302" />
 
             <!--DockPanel za uljepsavanje teksta-->
             <DockPanel >

@@ -129,6 +129,7 @@ namespace Projekat
 				procitaj.textBoxBroj.IsEnabled = false;
 				procitaj.richTextBoxBarselona.IsEnabled = false;
 				procitaj.imgSlika.IsEnabled = false;
+				procitaj.textBoxFajl.IsEnabled = false;
 				procitaj.RichTextBoxText.FontSize = 25;
 				procitaj.ShowDialog();
 

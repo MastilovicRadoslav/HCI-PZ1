@@ -173,8 +173,17 @@
             <Label x:Name="labelaBroj" Content="Broj dresa " FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="230" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" Margin="193,218,0,295"/>
             <Label x:Name="labelaOpis" Content="Opis igrača" FontSize="16" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="276" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2" Margin="193,289,0,229"/>
             <Label x:Name="labelaSlika" Content="Unesite sliku"  FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="35" Width="100" Canvas.Left="265" Canvas.Top="358" BorderBrush="Black" BorderThickness="1" Background="#e8d0f2"  Margin="193,419,0,108"/>
-            <TextBox x:Name="textBoxNaziv" TextWrapping="Wrap" BorderBrush="Black" BorderThickness="1" Width="260" Canvas.Top="186" Canvas.Left="370"  Margin="383,158,222,369" />
-            <TextBox x:Name="textBoxBroj" TextWrapping="Wrap" BorderBrush="Black" BorderThickness="1" Width="260" Canvas.Top="230" Canvas.Left="370"  Margin="383,225,222,302" />
+            <TextBox x:Name="textBoxNaziv" 
+                     TextWrapping="Wrap" 
+                     BorderBrush="Black" 
+                     BorderThickness="1" 
+                     Width="260" Canvas.Top="186" Canvas.Left="370" 
+                     Margin="383,158,222,369" />
+            <TextBox x:Name="textBoxBroj" 
+                     TextWrapping="Wrap" 
+                     BorderBrush="Black" BorderThickness="1" 
+                     Width="260" Canvas.Top="230" Canvas.Left="370"  
+                     Margin="383,225,222,302" />
 
             <DockPanel >
                 <ToolBar BorderThickness="1" BorderBrush="Black" Width="275" Height="26" Canvas.Left="370" Margin="170,45,0,0">

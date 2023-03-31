@@ -133,6 +133,7 @@ namespace Projekat
 						textBoxBroj.BorderBrush = Brushes.Green;
 						textBoxBroj.BorderThickness = new Thickness(1);
 						textBoxGreskaBroj.Text = "";
+						textBoxGreskaBroj.Foreground = Brushes.Gray;
 					}
 					else if(Int32.Parse(textBoxBroj.Text) <= 0)
 					{
@@ -160,7 +161,8 @@ namespace Projekat
 					textBoxBroj.BorderBrush = Brushes.Red;
 					textBoxBroj.BorderThickness = new Thickness(1);
 					textBoxGreskaBroj.Text = "Niste unijeli broj!";
-					textBoxGreskaBroj.BorderBrush = Brushes.Red;
+					textBoxGreskaBroj.Foreground = Brushes.Red;
+
 
 				}
 			}

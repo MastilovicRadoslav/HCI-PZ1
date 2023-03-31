@@ -209,6 +209,8 @@ namespace Projekat
 		{
 			if (validate())
 			{
+				File.Delete(fajl_pomocni);
+
 				if (pomoc == "") //provjera da li je slika uopste promijenjena, ako nije ostaje nam ista slika
 				{
 					pomoc = slika_pomocna;
@@ -218,10 +220,9 @@ namespace Projekat
 				TextRange textRange;
 				FileStream fileStream;
 				textRange = new TextRange(richTextBoxBarselona.Document.ContentStart, richTextBoxBarselona.Document.ContentEnd);
-				fileStream = new FileStream(fajl_pomocni, FileMode.Open);
+				fileStream = new FileStream(fajl_pomocni, FileMode.Create);
 				textRange.Save(fileStream, DataFormats.Rtf);
 				fileStream.Close();
-
 				this.Close();
 			}
 			else
@@ -273,7 +274,7 @@ namespace Projekat
 				bool broj = int.TryParse(textBoxBroj.Text, out _);
 				if (broj)
 				{
-					if (Int32.Parse(textBoxBroj.Text) >= 0)
+					if (Int32.Parse(textBoxBroj.Text) > 0 && Int32.Parse(textBoxBroj.Text) < 100)
 					{
 						textBoxBroj.Foreground = Brushes.Black;
 						textBoxBroj.BorderBrush = Brushes.Green;
@@ -309,7 +310,7 @@ namespace Projekat
 					textBoxBroj.BorderThickness = new Thickness(1);
 					textBoxGreskaBroj.Text = "Unesite broj!";
 					textBoxGreskaBroj.BorderThickness = new Thickness(1);
-					textBoxGreskaBroj.BorderBrush = Brushes.Red;
+					textBoxGreskaBroj.Foreground = Brushes.Red;
 
 				}
 
@@ -325,7 +326,7 @@ namespace Projekat
 			else
 			{
 				richTextBoxText.Foreground = Brushes.Black;
-				richTextBoxBarselona.BorderBrush = Brushes.Gray;
+				richTextBoxBarselona.BorderBrush = Brushes.Green;
 			}
 
 

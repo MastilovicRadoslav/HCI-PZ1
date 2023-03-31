@@ -30,9 +30,9 @@ namespace Projekat
 			InitializeComponent();
 
 			textBoxNaziv.Text = barsa.nazivIgraca;
-			textBoxBroj.Text = "Broj dresa je: " + Convert.ToString(barsa.brojDresa);
+			textBoxBroj.Text = "Broj dresa je: " + Convert.ToString(barsa.brojDresa) + ".";
 			textBoxDatum.Text = "Datum je: " + barsa.datumPrelaska.ToString() + ".";
-
+			textBoxFajl.Text = "Fajl je: " + barsa.Fajl.ToString();
 			//slika_pomocna = barsa.Slika;
 			
 			Uri uri = new Uri(barsa.Slika);
