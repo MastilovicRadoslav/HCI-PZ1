@@ -25,13 +25,14 @@ namespace Projekat
 	{
 		#region Dodatna polja
 
-		public static readonly Class.DataIO serializer = new Class.DataIO();
-		public static BindingList<Barselona> Barsa { get; set; }
-
 		public static bool chexkBoxOznacen = false;					
 
 		public static BindingList<Barselona> brisanje = new BindingList<Barselona>();
 		public static BindingList<Barselona> Brisanje { get => brisanje; set => brisanje = value; }
+
+		public static readonly Class.DataIO serializer = new Class.DataIO();
+		public static BindingList<Barselona> Barsa { get; set; }
+
 		#endregion
 
 		public MainWindow()

@@ -94,18 +94,22 @@ namespace Projekat
 		{
 
 			object temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontStyleProperty);
-			tglButtonItalic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
+			tglButtonItalic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));	//italic
 
 			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontWeightProperty);
-			tglButtonBold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
+			tglButtonBold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));	   //bold
 
 			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
-			tglButtonUnderline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
+			tglButtonUnderline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));	  //underline
 
 			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontFamilyProperty);
 			ComboBoxFamily.SelectedItem = temp;
+
 			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.FontSizeProperty);
 			ComboBoxSize.Text = temp.ToString();
+
+			temp = richTextBoxBarselona.Selection.GetPropertyValue(Inline.ForegroundProperty);
+
 
 		}
 
