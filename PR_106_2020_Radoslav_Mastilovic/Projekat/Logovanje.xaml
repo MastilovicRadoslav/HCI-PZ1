@@ -13,7 +13,7 @@
         Background="Transparent"
         AllowsTransparency="True">
     <Grid>
-        <Border CornerRadius="12">
+        <Border CornerRadius="20">
             <Border.Background>
                 <ImageBrush ImageSource="/Slike/Pozadina.jpg"
                             Stretch="None"/>
@@ -297,6 +297,7 @@
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
+                            
                         </StackPanel>
                     </StackPanel>
                 </Grid>
