@@ -12,7 +12,8 @@ Logovanje window/page - user login, the user can be an admin or a visitor:
 
 • Postoji dugme za izlaz iz programa.
 
-![Login](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/cad12778-f736-4e87-bf1f-aceebc250b89)
+![image](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/c7e283dc-cc8d-4dad-8ed0-1f01704111b6)
+
 
 
 Main window/page - display of all objects in tabel with checkbox, hyperlink, image, and date of addition:
