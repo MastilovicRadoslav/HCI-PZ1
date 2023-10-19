@@ -28,7 +28,8 @@ Main window/page - display of all objects in tabel with checkbox, hyperlink, ima
 
 • Treća i četvrta kolona prikazuju sliku povezanu sa objektom i datum dodavanja.
 
-![dodaj_1](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/8fe9413f-936e-48c4-8496-4532d4378c29)
+![image](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/c1d8355b-6c3b-4623-9e77-8621654ee068)
+
 
 
 Dodavanje window/page - adding a new object:
@@ -45,7 +46,8 @@ Dodavanje window/page - adding a new object:
 
 • Prilikom uspešnog dodavanja novog objekta sadržaja, polje datum automatski dobija vrednost trenutka kada je dodavanje kompletirano.
 
-![dodaj](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/f6350560-ddec-48cc-b0ce-2d47fde3634a)
+![image](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/051a61cb-4bca-42fc-aa3c-5788ccfc1c31)
+
 
 
 Izmjena window/page - editing the selected object:
@@ -56,7 +58,8 @@ Izmjena window/page - editing the selected object:
 
 • Ako je korisnik Posetilac, otvara se prozor za detaljan prikaz objekta sadržaja.
 
-![izmeni](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/b7fb33e4-d011-4c2c-9168-be6971c6bfa2)
+![image](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/cbd3f501-976f-49e9-9fd3-0682ed9102fe)
+
 
 
 DetaljnoProcitaj window/page - displaying all details about the object:
@@ -67,5 +70,6 @@ DetaljnoProcitaj window/page - displaying all details about the object:
 
 • Ako je korisnik Posetilac, otvara se prozor za detaljan prikaz objekta sadržaja.
 
-![izmeni](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/b7fb33e4-d011-4c2c-9168-be6971c6bfa2)
+![image](https://github.com/MastilovicRadoslav/HCI-PZ1/assets/122049689/ba949c80-49bf-497d-b7b6-f6b3d5fe336b)
+
 
